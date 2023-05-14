@@ -10,26 +10,33 @@ using Datos;
 namespace Negocio
 {
     public class NegocioArticulo
-    {
+    {       
+
         public List<Articulo> listar()
         {
-            List<Articulo> listaArticulos = new List<Articulo>();
-            SqlConnection conexion = new SqlConnection();
-            SqlCommand comando = new SqlCommand();
+            List<Articulo> listaArticulos = new List<Articulo>();          
+            
             SqlDataReader lector;
+            //SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            
+            //instanciamos clase Datos
+            AccesoDatos conectar = new AccesoDatos();  
+            
 
             try
             {
-                conexion.ConnectionString = "server =.\\SQLEXPRESS; database = CATALOGO_DB; integrated security = true";
-                comando.CommandType = System.Data.CommandType.Text;//comando de SQL de tipo texto 
+                //conexion.ConnectionString = "server =.\\SQLEXPRESS; database = CATALOGO_DB; integrated security = true";
+                comando.CommandType = System.Data.CommandType.Text;//comando de SQL de tipo texto
                 comando.CommandText = "SELECT A.Id, Codigo, Nombre, A.Descripcion,ImagenUrl,M.Descripcion as Marca,C.Descripcion as Categoria, Precio FROM ARTICULOS A , MARCAS M, CATEGORIAS C WHERE A.IdMarca = M.Id AND A.IdCategoria = C.Id"; //establece instruccion de SQL
-                comando.Connection = conexion;
+                //comando.Connection = conexion;
+                comando.Connection = conectar.abrir();
 
-                conexion.Open();
+                //conexion.Open();
                 lector = comando.ExecuteReader();
 
                 while (lector.Read())
-                {
+                {                    
                     Articulo aux = new Articulo();
                     aux.Categoria = new Categoria();
                     aux.Marca = new Marca(); 
@@ -52,10 +59,16 @@ namespace Negocio
                 throw ex;
             }
             finally 
-            { 
-                conexion.Close();
+            {
+                //conexion.Close();
+                conectar.cerrar();
+                
             }
 
-        }
+        }    
+             
+
+
+
     }
 }

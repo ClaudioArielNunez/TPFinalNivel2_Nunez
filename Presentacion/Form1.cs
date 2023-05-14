@@ -24,10 +24,14 @@ namespace Presentacion
         {
             try
             {
+                
                 NegocioArticulo negocio = new NegocioArticulo();
+                
                 listaArticulos = negocio.listar();
                 dgvListaArt.DataSource = listaArticulos;
                 //pbxArticulo.Load(listaArticulos[0].ImagenUrl);
+                dgvListaArt.Columns["id"].Visible = false;
+                dgvListaArt.Columns["imagenUrl"].Visible = false;
                 cargarImagen(listaArticulos[0].ImagenUrl);
 
             }
@@ -55,11 +59,15 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-
-                pbxArticulo.Load("https://trolleymate.co.uk/assets/img/error_404.jpeg");
-                //pbxArticulo.Load("https://www.qonexalifecare.com/wp-content/themes/twentythirteen/images/no.jpg");
+                pbxArticulo.Load("https://trolleymate.co.uk/assets/img/error_404.jpeg");                
 
             }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            NuevoArticulo nuevoArticulo = new NuevoArticulo();
+            nuevoArticulo.ShowDialog();
         }
     }
 }
