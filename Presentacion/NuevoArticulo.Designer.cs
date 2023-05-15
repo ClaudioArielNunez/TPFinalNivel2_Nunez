@@ -42,10 +42,10 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtDescr = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.txtMarca = new System.Windows.Forms.TextBox();
-            this.txtCat = new System.Windows.Forms.TextBox();
-            this.txtImagen = new System.Windows.Forms.TextBox();
+            this.txtUrlimg = new System.Windows.Forms.TextBox();
             this.pbxCargaImg = new System.Windows.Forms.PictureBox();
+            this.cmbMarca = new System.Windows.Forms.ComboBox();
+            this.cmbCateg = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCargaImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -180,29 +180,13 @@
             this.txtPrecio.Size = new System.Drawing.Size(222, 30);
             this.txtPrecio.TabIndex = 3;
             // 
-            // txtMarca
+            // txtUrlimg
             // 
-            this.txtMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMarca.Location = new System.Drawing.Point(267, 246);
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(222, 30);
-            this.txtMarca.TabIndex = 4;
-            // 
-            // txtCat
-            // 
-            this.txtCat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCat.Location = new System.Drawing.Point(267, 295);
-            this.txtCat.Name = "txtCat";
-            this.txtCat.Size = new System.Drawing.Size(222, 30);
-            this.txtCat.TabIndex = 5;
-            // 
-            // txtImagen
-            // 
-            this.txtImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtImagen.Location = new System.Drawing.Point(267, 344);
-            this.txtImagen.Name = "txtImagen";
-            this.txtImagen.Size = new System.Drawing.Size(222, 30);
-            this.txtImagen.TabIndex = 6;
+            this.txtUrlimg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUrlimg.Location = new System.Drawing.Point(267, 344);
+            this.txtUrlimg.Name = "txtUrlimg";
+            this.txtUrlimg.Size = new System.Drawing.Size(222, 30);
+            this.txtUrlimg.TabIndex = 6;
             // 
             // pbxCargaImg
             // 
@@ -212,19 +196,37 @@
             this.pbxCargaImg.TabIndex = 3;
             this.pbxCargaImg.TabStop = false;
             // 
+            // cmbMarca
+            // 
+            this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMarca.FormattingEnabled = true;
+            this.cmbMarca.Location = new System.Drawing.Point(267, 246);
+            this.cmbMarca.Name = "cmbMarca";
+            this.cmbMarca.Size = new System.Drawing.Size(222, 28);
+            this.cmbMarca.TabIndex = 10;
+            // 
+            // cmbCateg
+            // 
+            this.cmbCateg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCateg.FormattingEnabled = true;
+            this.cmbCateg.Location = new System.Drawing.Point(267, 296);
+            this.cmbCateg.Name = "cmbCateg";
+            this.cmbCateg.Size = new System.Drawing.Size(222, 28);
+            this.cmbCateg.TabIndex = 10;
+            // 
             // NuevoArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(892, 503);
+            this.Controls.Add(this.cmbCateg);
+            this.Controls.Add(this.cmbMarca);
             this.Controls.Add(this.pbxCargaImg);
             this.Controls.Add(this.btnAgregarImg);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.txtImagen);
-            this.Controls.Add(this.txtCat);
+            this.Controls.Add(this.txtUrlimg);
             this.Controls.Add(this.txtDescr);
-            this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtCodigo);
@@ -237,6 +239,7 @@
             this.Controls.Add(this.lblCod);
             this.Name = "NuevoArticulo";
             this.Text = "NuevoArticulo";
+            this.Load += new System.EventHandler(this.NuevoArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxCargaImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -259,9 +262,9 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtDescr;
         private System.Windows.Forms.TextBox txtPrecio;
-        private System.Windows.Forms.TextBox txtMarca;
-        private System.Windows.Forms.TextBox txtCat;
-        private System.Windows.Forms.TextBox txtImagen;
+        private System.Windows.Forms.TextBox txtUrlimg;
         private System.Windows.Forms.PictureBox pbxCargaImg;
+        private System.Windows.Forms.ComboBox cmbMarca;
+        private System.Windows.Forms.ComboBox cmbCateg;
     }
 }

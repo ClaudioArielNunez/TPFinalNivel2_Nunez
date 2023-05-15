@@ -10,7 +10,9 @@ namespace Datos
 {
     public class AccesoDatos
     {
-                    
+        private SqlCommand comando = new SqlCommand();        
+        private SqlDataReader lector;
+        public SqlDataReader Lector {  get { return lector; } }
         private SqlConnection conexion = new SqlConnection("server =.\\SQLEXPRESS; database = CATALOGO_DB; integrated security = true");
 
         public SqlConnection abrir()
@@ -31,7 +33,48 @@ namespace Datos
             return conexion;
         }
         
+        public void setearConsulta(string consulta)
+        {            
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = consulta;
+        }
+        public void leerTabla()
+        {
+            comando.Connection = conexion;
 
+            try
+            {
+                conexion.Open();
+                lector = comando.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }            
+
+        }
+
+        public void ejecutarAccion()
+        {
+            comando.Connection = conexion;
+            try
+            {
+                conexion.Open();
+                comando.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void setearParametros(string nombre, object valor)
+        {
+            comando.Parameters.AddWithValue(nombre, valor);
+        }
 
     }
 }

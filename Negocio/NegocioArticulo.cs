@@ -14,44 +14,33 @@ namespace Negocio
 
         public List<Articulo> listar()
         {
-            List<Articulo> listaArticulos = new List<Articulo>();          
-            
-            SqlDataReader lector;
-            //SqlConnection conexion = new SqlConnection();
-            SqlCommand comando = new SqlCommand();
-            
-            //instanciamos clase Datos
-            AccesoDatos conectar = new AccesoDatos();  
-            
+            List<Articulo> listaArticulos = new List<Articulo>();        
+                        
+            AccesoDatos datos = new AccesoDatos();         
 
             try
             {
-                //conexion.ConnectionString = "server =.\\SQLEXPRESS; database = CATALOGO_DB; integrated security = true";
-                comando.CommandType = System.Data.CommandType.Text;//comando de SQL de tipo texto
-                comando.CommandText = "SELECT A.Id, Codigo, Nombre, A.Descripcion,ImagenUrl,M.Descripcion as Marca,C.Descripcion as Categoria, Precio FROM ARTICULOS A , MARCAS M, CATEGORIAS C WHERE A.IdMarca = M.Id AND A.IdCategoria = C.Id"; //establece instruccion de SQL
-                //comando.Connection = conexion;
-                comando.Connection = conectar.abrir();
+                datos.setearConsulta("SELECT A.Id, Codigo, Nombre, A.Descripcion,ImagenUrl,M.Descripcion as Marca,C.Descripcion as Categoria, Precio FROM ARTICULOS A , MARCAS M, CATEGORIAS C WHERE A.IdMarca = M.Id AND A.IdCategoria = C.Id");
+                datos.leerTabla();
 
-                //conexion.Open();
-                lector = comando.ExecuteReader();
-
-                while (lector.Read())
-                {                    
+                while (datos.Lector.Read()) 
+                {
                     Articulo aux = new Articulo();
                     aux.Categoria = new Categoria();
-                    aux.Marca = new Marca(); 
-                    aux.Id = (int)lector["id"];
-                    aux.Codigo = (string)lector["Codigo"];
-                    aux.Nombre = (string)lector["Nombre"];
-                    aux.Descripcion = (string)lector["Descripcion"];
-                    aux.ImagenUrl = (string)lector["ImagenUrl"];
-                    aux.Marca.Descripcion1 = (string)lector["Marca"];
-                    aux.Categoria.Descripcion1 = (string)lector["Categoria"];
-                    aux.Precio = (decimal)lector["Precio"];    
+                    aux.Marca = new Marca();
+                    aux.Id = (int)datos.Lector["id"];
+                    aux.Codigo = (string)datos.Lector["Codigo"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+                    aux.Marca.Descripcion1 = (string)datos.Lector["Marca"];
+                    aux.Categoria.Descripcion1 = (string)datos.Lector["Categoria"];
+                    aux.Precio = (decimal)datos.Lector["Precio"];
 
                     listaArticulos.Add(aux);
                 }
                 return listaArticulos;
+               
             }
             catch (Exception ex)
             {
@@ -59,14 +48,37 @@ namespace Negocio
                 throw ex;
             }
             finally 
-            {
-                //conexion.Close();
-                conectar.cerrar();
-                
+            {                
+                datos.cerrar();                
             }
 
         }    
-             
+
+        public void agregar(Articulo art)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, Precio, ImagenUrl, Marca, Categoria) values('" + art.Codigo+"','"+art.Nombre+"','"+art.Descripcion+"',"+art.Precio+",@UrlImagen, @Marca, @Categoria)");
+                datos.setearParametros("@UrlImagen", art.ImagenUrl);
+                datos.setearParametros("@Marca", art.Marca.Id1);
+                datos.setearParametros("@Categoria", art.Categoria.Id1);
+
+                datos.ejecutarAccion();
+            }                                                    
+
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrar();
+            }
+
+        }
+
 
 
 
