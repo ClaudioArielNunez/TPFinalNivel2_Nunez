@@ -22,11 +22,15 @@ namespace Presentacion
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            cargar();
+                     
+        }
+        private void cargar()
+        {
             try
             {
-                
                 NegocioArticulo negocio = new NegocioArticulo();
-                
+
                 listaArticulos = negocio.listar();
                 dgvListaArt.DataSource = listaArticulos;
                 //pbxArticulo.Load(listaArticulos[0].ImagenUrl);
@@ -37,10 +41,8 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Error "+ ex.ToString());
             }
-           
         }
 
         private void dgvListaArt_SelectionChanged(object sender, EventArgs e)
@@ -68,6 +70,7 @@ namespace Presentacion
         {
             NuevoArticulo nuevoArticulo = new NuevoArticulo();
             nuevoArticulo.ShowDialog();
+            cargar();
         }
     }
 }

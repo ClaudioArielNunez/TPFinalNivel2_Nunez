@@ -38,7 +38,7 @@ namespace Presentacion
                 artNuevo.Categoria = (Categoria)cmbCateg.SelectedItem;
                 artNuevo.ImagenUrl = txtUrlimg.Text;
 
-                negocio.agregar(artNuevo);//lanza exception
+                negocio.agregar(artNuevo);
                 MessageBox.Show("Agregado con exito");
                 Close();
             }
@@ -77,5 +77,23 @@ namespace Presentacion
                 MessageBox.Show("Error "+ ex.ToString());                
             }
         }
+
+        private void txtUrlimg_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(txtUrlimg.Text);
+        }
+        private void cargarImagen(string img)
+        {
+            try
+            {
+                pbxArticulo.Load(img);
+            }
+            catch (Exception ex)
+            {
+                pbxArticulo.Load("https://trolleymate.co.uk/assets/img/error_404.jpeg");
+
+            }
+        }
+        
     }
 }

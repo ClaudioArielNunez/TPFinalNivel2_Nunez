@@ -70,7 +70,7 @@ namespace Negocio
             catch (Exception ex)
             {
 
-                throw ex;//lanza exception
+                throw ex;
             }
             finally
             {
@@ -78,6 +78,7 @@ namespace Negocio
             }
 
         }
+        
 
 
 

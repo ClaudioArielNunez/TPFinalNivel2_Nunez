@@ -43,10 +43,10 @@
             this.txtDescr = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.txtUrlimg = new System.Windows.Forms.TextBox();
-            this.pbxCargaImg = new System.Windows.Forms.PictureBox();
+            this.pbxArticulo = new System.Windows.Forms.PictureBox();
             this.cmbMarca = new System.Windows.Forms.ComboBox();
             this.cmbCateg = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxCargaImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCod
@@ -187,14 +187,16 @@
             this.txtUrlimg.Name = "txtUrlimg";
             this.txtUrlimg.Size = new System.Drawing.Size(222, 30);
             this.txtUrlimg.TabIndex = 6;
+            this.txtUrlimg.Leave += new System.EventHandler(this.txtUrlimg_Leave);
             // 
-            // pbxCargaImg
+            // pbxArticulo
             // 
-            this.pbxCargaImg.Location = new System.Drawing.Point(513, 50);
-            this.pbxCargaImg.Name = "pbxCargaImg";
-            this.pbxCargaImg.Size = new System.Drawing.Size(297, 265);
-            this.pbxCargaImg.TabIndex = 3;
-            this.pbxCargaImg.TabStop = false;
+            this.pbxArticulo.Location = new System.Drawing.Point(513, 50);
+            this.pbxArticulo.Name = "pbxArticulo";
+            this.pbxArticulo.Size = new System.Drawing.Size(297, 265);
+            this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxArticulo.TabIndex = 3;
+            this.pbxArticulo.TabStop = false;
             // 
             // cmbMarca
             // 
@@ -221,7 +223,7 @@
             this.ClientSize = new System.Drawing.Size(892, 503);
             this.Controls.Add(this.cmbCateg);
             this.Controls.Add(this.cmbMarca);
-            this.Controls.Add(this.pbxCargaImg);
+            this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.btnAgregarImg);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
@@ -240,7 +242,7 @@
             this.Name = "NuevoArticulo";
             this.Text = "NuevoArticulo";
             this.Load += new System.EventHandler(this.NuevoArticulo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbxCargaImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,7 +265,7 @@
         private System.Windows.Forms.TextBox txtDescr;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.TextBox txtUrlimg;
-        private System.Windows.Forms.PictureBox pbxCargaImg;
+        private System.Windows.Forms.PictureBox pbxArticulo;
         private System.Windows.Forms.ComboBox cmbMarca;
         private System.Windows.Forms.ComboBox cmbCateg;
     }
