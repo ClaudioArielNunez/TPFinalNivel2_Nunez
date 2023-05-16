@@ -59,10 +59,10 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, Precio, ImagenUrl, Marca, Categoria) values('" + art.Codigo+"','"+art.Nombre+"','"+art.Descripcion+"',"+art.Precio+",@UrlImagen, @Marca, @Categoria)");
-                datos.setearParametros("@UrlImagen", art.ImagenUrl);
-                datos.setearParametros("@Marca", art.Marca.Id1);
-                datos.setearParametros("@Categoria", art.Categoria.Id1);
+                datos.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, Precio, ImagenUrl, IdMarca, IdCategoria) values('"+ art.Codigo+"','"+art.Nombre+"','"+art.Descripcion+"',"+art.Precio+",@ImagenUrl, @IdMarca, @IdCategoria)");
+                datos.setearParametros("@ImagenUrl", art.ImagenUrl);
+                datos.setearParametros("@IdMarca", art.Marca.Id1);
+                datos.setearParametros("@IdCategoria", art.Categoria.Id1);
 
                 datos.ejecutarAccion();
             }                                                    
@@ -70,7 +70,7 @@ namespace Negocio
             catch (Exception ex)
             {
 
-                throw ex;
+                throw ex;//lanza exception
             }
             finally
             {

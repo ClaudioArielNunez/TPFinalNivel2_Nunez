@@ -38,7 +38,7 @@ namespace Presentacion
                 artNuevo.Categoria = (Categoria)cmbCateg.SelectedItem;
                 artNuevo.ImagenUrl = txtUrlimg.Text;
 
-                negocio.agregar(artNuevo);
+                negocio.agregar(artNuevo);//lanza exception
                 MessageBox.Show("Agregado con exito");
                 Close();
             }
@@ -57,8 +57,8 @@ namespace Presentacion
             try
             {
                 cmbMarca.DataSource = marca.listar();
-                cmbMarca.ValueMember = "Id";
-                cmbMarca.DisplayMember = "Descripcion"; 
+                cmbMarca.ValueMember = "Id1";
+                cmbMarca.DisplayMember = "Descripcion1"; 
                 
             }
             catch (Exception ex)
@@ -69,8 +69,8 @@ namespace Presentacion
             try
             {                 
                 cmbCateg.DataSource = cat.listar();
-                cmbCateg.ValueMember = "Id";
-                cmbCateg.DisplayMember = "Descripcion";
+                cmbCateg.ValueMember = "Id1";
+                cmbCateg.DisplayMember = "Descripcion1";
             }
             catch (Exception ex)
             {
