@@ -12,7 +12,7 @@ namespace Entidades
         //public int Id { get; set; }
         
         //public int Id { get; set; }
-        private int id;
+        private int id;        
         private string codigo;
         private string nombre;
         private string descripcion;

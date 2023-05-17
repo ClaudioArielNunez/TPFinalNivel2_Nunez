@@ -40,10 +40,13 @@
             // dgvListaArt
             // 
             this.dgvListaArt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaArt.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvListaArt.Location = new System.Drawing.Point(28, 52);
+            this.dgvListaArt.MultiSelect = false;
             this.dgvListaArt.Name = "dgvListaArt";
             this.dgvListaArt.RowHeadersWidth = 62;
             this.dgvListaArt.RowTemplate.Height = 28;
+            this.dgvListaArt.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaArt.Size = new System.Drawing.Size(992, 273);
             this.dgvListaArt.TabIndex = 0;
             this.dgvListaArt.SelectionChanged += new System.EventHandler(this.dgvListaArt_SelectionChanged);
@@ -75,6 +78,7 @@
             this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 

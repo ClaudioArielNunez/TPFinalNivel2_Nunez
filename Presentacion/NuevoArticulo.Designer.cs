@@ -129,7 +129,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(212, 432);
+            this.btnAceptar.Location = new System.Drawing.Point(267, 453);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(113, 41);
             this.btnAceptar.TabIndex = 8;
@@ -139,7 +139,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(420, 432);
+            this.btnCancelar.Location = new System.Drawing.Point(399, 453);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(113, 41);
             this.btnCancelar.TabIndex = 9;
@@ -149,12 +149,13 @@
             // 
             // btnAgregarImg
             // 
-            this.btnAgregarImg.Location = new System.Drawing.Point(513, 334);
+            this.btnAgregarImg.Location = new System.Drawing.Point(131, 438);
             this.btnAgregarImg.Name = "btnAgregarImg";
             this.btnAgregarImg.Size = new System.Drawing.Size(119, 56);
             this.btnAgregarImg.TabIndex = 7;
             this.btnAgregarImg.Text = "Agregar Imagen";
             this.btnAgregarImg.UseVisualStyleBackColor = true;
+            this.btnAgregarImg.Click += new System.EventHandler(this.btnAgregarImg_Click);
             // 
             // txtNombre
             // 
@@ -191,9 +192,9 @@
             // 
             // pbxArticulo
             // 
-            this.pbxArticulo.Location = new System.Drawing.Point(513, 50);
+            this.pbxArticulo.Location = new System.Drawing.Point(532, 50);
             this.pbxArticulo.Name = "pbxArticulo";
-            this.pbxArticulo.Size = new System.Drawing.Size(297, 265);
+            this.pbxArticulo.Size = new System.Drawing.Size(297, 393);
             this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxArticulo.TabIndex = 3;
             this.pbxArticulo.TabStop = false;
@@ -220,7 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 503);
+            this.ClientSize = new System.Drawing.Size(892, 562);
             this.Controls.Add(this.cmbCateg);
             this.Controls.Add(this.cmbMarca);
             this.Controls.Add(this.pbxArticulo);

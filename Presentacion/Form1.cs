@@ -72,5 +72,14 @@ namespace Presentacion
             nuevoArticulo.ShowDialog();
             cargar();
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Articulo select;
+            select = (Articulo)dgvListaArt.CurrentRow.DataBoundItem;
+            NuevoArticulo modificar = new NuevoArticulo(select);
+            modificar.ShowDialog();
+            cargar();
+        }
     }
 }

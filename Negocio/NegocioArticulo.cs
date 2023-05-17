@@ -20,7 +20,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("SELECT A.Id, Codigo, Nombre, A.Descripcion,ImagenUrl,M.Descripcion as Marca,C.Descripcion as Categoria, Precio FROM ARTICULOS A , MARCAS M, CATEGORIAS C WHERE A.IdMarca = M.Id AND A.IdCategoria = C.Id");
+                datos.setearConsulta("Select A.Id,Codigo,Nombre,A.Descripcion,Precio,M.Descripcion as marca,C.Descripcion as categoria, ImagenUrl,IdMarca,IdCategoria, M.Id, C.Id from ARTICULOS A,MARCAS M, CATEGORIAS C WHERE IdMarca = M.Id and IdCategoria = C.Id");
                 datos.leerTabla();
 
                 while (datos.Lector.Read()) 
@@ -28,13 +28,19 @@ namespace Negocio
                     Articulo aux = new Articulo();
                     aux.Categoria = new Categoria();
                     aux.Marca = new Marca();
+
                     aux.Id = (int)datos.Lector["id"];
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
+
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
                     aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
-                    aux.Marca.Descripcion1 = (string)datos.Lector["Marca"];
-                    aux.Categoria.Descripcion1 = (string)datos.Lector["Categoria"];
+                    
+
+                    aux.Marca.Id1 = (int)datos.Lector["IdMarca"];//IdMarca tabla Articulos
+                    aux.Marca.Descripcion1 = (string)datos.Lector["marca"];
+                    aux.Categoria.Id1 = (int)datos.Lector["IdCategoria"];//IdCategoria tabla Articulos
+                    aux.Categoria.Descripcion1 = (string)datos.Lector["categoria"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
 
                     listaArticulos.Add(aux);
@@ -44,7 +50,6 @@ namespace Negocio
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally 
@@ -65,8 +70,36 @@ namespace Negocio
                 datos.setearParametros("@IdCategoria", art.Categoria.Id1);
 
                 datos.ejecutarAccion();
-            }                                                    
+            }                                              
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrar();
+            }
 
+        }
+        public void modificar(Articulo art)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("update ARTICULOS set Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, IdMarca = @idMarca, IdCategoria = @idCat, ImagenUrl = @img, Precio = @precio WHERE Id = @id");
+                datos.setearParametros("@codigo",art.Codigo);
+                datos.setearParametros("@nombre", art.Nombre);
+                datos.setearParametros("@descripcion", art.Descripcion);
+                datos.setearParametros("@idMarca", art.Marca.Id1);
+                datos.setearParametros("@idCat", art.Categoria.Id1);
+                datos.setearParametros("@img", art.ImagenUrl);
+                datos.setearParametros("@precio",art.Precio);
+                datos.setearParametros("@id",art.Id);
+
+
+                datos.ejecutarAccion();
+            }
             catch (Exception ex)
             {
 
@@ -76,7 +109,6 @@ namespace Negocio
             {
                 datos.cerrar();
             }
-
         }
         
 

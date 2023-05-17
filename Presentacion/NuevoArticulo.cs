@@ -14,9 +14,17 @@ namespace Presentacion
 {
     public partial class NuevoArticulo : Form
     {
+        private Articulo articulo = null;
         public NuevoArticulo()
         {
             InitializeComponent();
+        }
+        public NuevoArticulo(Articulo artxModificar)
+        {
+            InitializeComponent();
+            this.articulo = artxModificar;
+            Text = "Modificar Artículo";
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -26,21 +34,35 @@ namespace Presentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Articulo artNuevo = new Articulo();
+            
             NegocioArticulo negocio = new NegocioArticulo();
             try
             {
-                artNuevo.Codigo = txtCodigo.Text;
-                artNuevo.Nombre = txtNombre.Text;
-                artNuevo.Descripcion = txtDescr.Text;
-                artNuevo.Precio = decimal.Parse(txtPrecio.Text);
-                artNuevo.Marca = (Marca)cmbMarca.SelectedItem;
-                artNuevo.Categoria = (Categoria)cmbCateg.SelectedItem;
-                artNuevo.ImagenUrl = txtUrlimg.Text;
+                if(articulo == null)
+                {
+                    articulo = new Articulo();
+                }
 
-                negocio.agregar(artNuevo);
-                MessageBox.Show("Agregado con exito");
+                articulo.Codigo = txtCodigo.Text;
+                articulo.Nombre = txtNombre.Text;
+                articulo.Descripcion = txtDescr.Text;
+                articulo.Precio = Convert.ToDecimal(txtPrecio.Text);//
+                articulo.Marca = (Marca)cmbMarca.SelectedItem;
+                articulo.Categoria = (Categoria)cmbCateg.SelectedItem;
+                articulo.ImagenUrl = txtUrlimg.Text;
+
+                if(articulo.Id != 0)
+                {
+                    negocio.modificar(articulo);
+                    MessageBox.Show("Modificado con exito!");
+                }
+                else
+                {
+                    negocio.agregar(articulo);
+                    MessageBox.Show("Agregado con exito");
+                }
                 Close();
+                
             }
             catch (Exception ex)
             {
@@ -52,30 +74,36 @@ namespace Presentacion
         private void NuevoArticulo_Load(object sender, EventArgs e)
         {
             NegocioMarca marca = new NegocioMarca();
-            NegocioCategoria cat = new NegocioCategoria();
+            NegocioCategoria cat = new NegocioCategoria();            
             
-            try
-            {
-                cmbMarca.DataSource = marca.listar();
-                cmbMarca.ValueMember = "Id1";
-                cmbMarca.DisplayMember = "Descripcion1"; 
+                try
+                {
                 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error " + ex.ToString());
-            }
-            
-            try
-            {                 
-                cmbCateg.DataSource = cat.listar();
-                cmbCateg.ValueMember = "Id1";
-                cmbCateg.DisplayMember = "Descripcion1";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error "+ ex.ToString());                
-            }
+                    cmbMarca.DataSource = marca.listar();
+                    cmbMarca.ValueMember = "Id1";
+                    cmbMarca.DisplayMember = "Descripcion1";
+
+                    cmbCateg.DataSource = cat.listar();
+                    cmbCateg.ValueMember = "Id1";
+                    cmbCateg.DisplayMember = "Descripcion1";
+
+                    
+                    if (articulo != null)
+                    {
+                        txtCodigo.Text = articulo.Codigo;
+                        txtNombre.Text = articulo.Nombre;
+                        txtDescr.Text = articulo.Descripcion;
+                        txtPrecio.Text = articulo.Precio.ToString("0.00");
+                        cmbMarca.SelectedValue = articulo.Marca.Id1;
+                        cmbCateg.SelectedValue = articulo.Categoria.Id1;
+                        txtUrlimg.Text = articulo.ImagenUrl;
+                        cargarImagen(articulo.ImagenUrl);
+                    }                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error " + ex.ToString());
+                }                                     
         }
 
         private void txtUrlimg_Leave(object sender, EventArgs e)
@@ -94,6 +122,16 @@ namespace Presentacion
 
             }
         }
-        
+
+        private void btnAgregarImg_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openArchivo = new OpenFileDialog();
+            openArchivo.Filter = "jpg|*jpg;|png|*.png";
+            if(openArchivo.ShowDialog() == DialogResult.OK)
+            {
+                txtUrlimg.Text = openArchivo.FileName;
+                cargarImagen(txtUrlimg.Text);
+            }
+        }
     }
 }
