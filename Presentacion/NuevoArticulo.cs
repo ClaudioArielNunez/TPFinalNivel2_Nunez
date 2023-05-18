@@ -96,8 +96,8 @@ namespace Presentacion
                         txtPrecio.Text = articulo.Precio.ToString("0.00");
                         cmbMarca.SelectedValue = articulo.Marca.Id1;
                         cmbCateg.SelectedValue = articulo.Categoria.Id1;
-                        txtUrlimg.Text = articulo.ImagenUrl;
                         cargarImagen(articulo.ImagenUrl);
+                        txtUrlimg.Text = articulo.ImagenUrl;
                     }                    
                 }
                 catch (Exception ex)

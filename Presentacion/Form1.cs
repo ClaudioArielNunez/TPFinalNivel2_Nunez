@@ -25,6 +25,11 @@ namespace Presentacion
             cargar();
                      
         }
+        private void ocultarColumnas()
+        {
+            dgvListaArt.Columns["id"].Visible = false;
+            dgvListaArt.Columns["imagenUrl"].Visible = false;
+        }
         private void cargar()
         {
             try
@@ -34,8 +39,9 @@ namespace Presentacion
                 listaArticulos = negocio.listar();
                 dgvListaArt.DataSource = listaArticulos;
                 //pbxArticulo.Load(listaArticulos[0].ImagenUrl);
-                dgvListaArt.Columns["id"].Visible = false;
-                dgvListaArt.Columns["imagenUrl"].Visible = false;
+                ocultarColumnas();
+                //dgvListaArt.Columns["id"].Visible = false;
+                //dgvListaArt.Columns["imagenUrl"].Visible = false;
                 cargarImagen(listaArticulos[0].ImagenUrl);
 
             }
@@ -47,10 +53,11 @@ namespace Presentacion
 
         private void dgvListaArt_SelectionChanged(object sender, EventArgs e)
         {
-            
-            Articulo select = (Articulo)dgvListaArt.CurrentRow.DataBoundItem;
-            //pbxArticulo.Load(select.ImagenUrl);
-            cargarImagen(select.ImagenUrl);
+            if (dgvListaArt.CurrentRow != null)
+            {
+                Articulo select = (Articulo)dgvListaArt.CurrentRow.DataBoundItem;                
+                cargarImagen(select.ImagenUrl);
+            }
         }
 
         private void cargarImagen(string img)
@@ -80,6 +87,46 @@ namespace Presentacion
             NuevoArticulo modificar = new NuevoArticulo(select);
             modificar.ShowDialog();
             cargar();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            NegocioArticulo negocio = new NegocioArticulo();
+            Articulo select;
+            try
+            {
+                DialogResult consulta = MessageBox.Show("Eliminas este producto?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (consulta == DialogResult.Yes)
+                {
+                    select = (Articulo)dgvListaArt.CurrentRow.DataBoundItem;
+                    negocio.eliminar(select.Id);
+                    cargar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: "+ ex.ToString());
+            }
+
+        }
+
+        private void txtFiltroRapido_TextChanged(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltro;
+            string filtro = txtFiltroRapido.Text;
+
+            if(filtro.Length >= 3)
+            {
+                listaFiltro = listaArticulos.FindAll(x => x.Nombre.ToUpper().Contains(txtFiltroRapido.Text.ToUpper()));
+            }
+            else
+            {
+                listaFiltro = listaArticulos;
+            }
+
+            dgvListaArt.DataSource = null;
+            dgvListaArt.DataSource = listaFiltro;
+            ocultarColumnas();
         }
     }
 }

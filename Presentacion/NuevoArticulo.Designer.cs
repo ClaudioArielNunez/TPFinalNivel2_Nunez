@@ -53,7 +53,7 @@
             // 
             this.lblCod.AutoSize = true;
             this.lblCod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCod.Location = new System.Drawing.Point(130, 54);
+            this.lblCod.Location = new System.Drawing.Point(130, 52);
             this.lblCod.Name = "lblCod";
             this.lblCod.Size = new System.Drawing.Size(81, 25);
             this.lblCod.TabIndex = 0;
@@ -63,7 +63,7 @@
             // 
             this.lblMod.AutoSize = true;
             this.lblMod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMod.Location = new System.Drawing.Point(130, 103);
+            this.lblMod.Location = new System.Drawing.Point(130, 100);
             this.lblMod.Name = "lblMod";
             this.lblMod.Size = new System.Drawing.Size(87, 25);
             this.lblMod.TabIndex = 0;
@@ -73,7 +73,7 @@
             // 
             this.lblDesc.AutoSize = true;
             this.lblDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDesc.Location = new System.Drawing.Point(130, 152);
+            this.lblDesc.Location = new System.Drawing.Point(130, 148);
             this.lblDesc.Name = "lblDesc";
             this.lblDesc.Size = new System.Drawing.Size(120, 25);
             this.lblDesc.TabIndex = 0;
@@ -83,7 +83,7 @@
             // 
             this.lblPr.AutoSize = true;
             this.lblPr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPr.Location = new System.Drawing.Point(130, 201);
+            this.lblPr.Location = new System.Drawing.Point(130, 196);
             this.lblPr.Name = "lblPr";
             this.lblPr.Size = new System.Drawing.Size(73, 25);
             this.lblPr.TabIndex = 0;
@@ -93,7 +93,7 @@
             // 
             this.lblMarca.AutoSize = true;
             this.lblMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarca.Location = new System.Drawing.Point(130, 250);
+            this.lblMarca.Location = new System.Drawing.Point(130, 292);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(73, 25);
             this.lblMarca.TabIndex = 0;
@@ -103,7 +103,7 @@
             // 
             this.lblCat.AutoSize = true;
             this.lblCat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCat.Location = new System.Drawing.Point(130, 299);
+            this.lblCat.Location = new System.Drawing.Point(130, 340);
             this.lblCat.Name = "lblCat";
             this.lblCat.Size = new System.Drawing.Size(103, 25);
             this.lblCat.TabIndex = 0;
@@ -113,7 +113,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(130, 348);
+            this.label7.Location = new System.Drawing.Point(130, 244);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(112, 25);
             this.label7.TabIndex = 0;
@@ -160,7 +160,7 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(267, 99);
+            this.txtNombre.Location = new System.Drawing.Point(267, 98);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(222, 30);
             this.txtNombre.TabIndex = 1;
@@ -168,7 +168,7 @@
             // txtDescr
             // 
             this.txtDescr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescr.Location = new System.Drawing.Point(267, 148);
+            this.txtDescr.Location = new System.Drawing.Point(267, 146);
             this.txtDescr.Name = "txtDescr";
             this.txtDescr.Size = new System.Drawing.Size(222, 30);
             this.txtDescr.TabIndex = 2;
@@ -176,7 +176,7 @@
             // txtPrecio
             // 
             this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.Location = new System.Drawing.Point(267, 197);
+            this.txtPrecio.Location = new System.Drawing.Point(267, 194);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(222, 30);
             this.txtPrecio.TabIndex = 3;
@@ -184,7 +184,7 @@
             // txtUrlimg
             // 
             this.txtUrlimg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUrlimg.Location = new System.Drawing.Point(267, 344);
+            this.txtUrlimg.Location = new System.Drawing.Point(267, 242);
             this.txtUrlimg.Name = "txtUrlimg";
             this.txtUrlimg.Size = new System.Drawing.Size(222, 30);
             this.txtUrlimg.TabIndex = 6;
@@ -203,7 +203,7 @@
             // 
             this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMarca.FormattingEnabled = true;
-            this.cmbMarca.Location = new System.Drawing.Point(267, 246);
+            this.cmbMarca.Location = new System.Drawing.Point(267, 290);
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(222, 28);
             this.cmbMarca.TabIndex = 10;
@@ -212,7 +212,7 @@
             // 
             this.cmbCateg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCateg.FormattingEnabled = true;
-            this.cmbCateg.Location = new System.Drawing.Point(267, 296);
+            this.cmbCateg.Location = new System.Drawing.Point(267, 336);
             this.cmbCateg.Name = "cmbCateg";
             this.cmbCateg.Size = new System.Drawing.Size(222, 28);
             this.cmbCateg.TabIndex = 10;

@@ -14,7 +14,7 @@ namespace Datos
         private SqlDataReader lector;
         public SqlDataReader Lector {  get { return lector; } }
         private SqlConnection conexion = new SqlConnection("server =.\\SQLEXPRESS; database = CATALOGO_DB; integrated security = true");
-
+        
         public SqlConnection abrir()
         {
             if(conexion.State == System.Data.ConnectionState.Closed) 
@@ -23,7 +23,7 @@ namespace Datos
             }
             return conexion;
         }
-
+        
         public SqlConnection cerrar()
         {
             if(conexion.State == System.Data.ConnectionState.Open)

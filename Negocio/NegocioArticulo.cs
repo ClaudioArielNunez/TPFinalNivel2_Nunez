@@ -87,7 +87,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("update ARTICULOS set Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, IdMarca = @idMarca, IdCategoria = @idCat, ImagenUrl = @img, Precio = @precio WHERE Id = @id");
+                datos.setearConsulta("Update ARTICULOS set Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, IdMarca = @idMarca, IdCategoria = @idCat, ImagenUrl = @img, Precio = @precio WHERE Id = @id");
                 datos.setearParametros("@codigo",art.Codigo);
                 datos.setearParametros("@nombre", art.Nombre);
                 datos.setearParametros("@descripcion", art.Descripcion);
@@ -110,6 +110,23 @@ namespace Negocio
                 datos.cerrar();
             }
         }
+        public void eliminar(int Id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("Delete from Articulos Where Id = @id");
+                datos.setearParametros("@id", Id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+
         
 
 
