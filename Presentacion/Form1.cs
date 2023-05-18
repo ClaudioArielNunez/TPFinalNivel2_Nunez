@@ -23,6 +23,10 @@ namespace Presentacion
         private void Form1_Load(object sender, EventArgs e)
         {
             cargar();
+            cmbCampo.Items.Add("Precio");
+            cmbCampo.Items.Add("Codigo");
+            cmbCampo.Items.Add("Nombre");
+            cmbCampo.Items.Add("Descripcion");// chequear acentuacion
                      
         }
         private void ocultarColumnas()
@@ -37,11 +41,8 @@ namespace Presentacion
                 NegocioArticulo negocio = new NegocioArticulo();
 
                 listaArticulos = negocio.listar();
-                dgvListaArt.DataSource = listaArticulos;
-                //pbxArticulo.Load(listaArticulos[0].ImagenUrl);
-                ocultarColumnas();
-                //dgvListaArt.Columns["id"].Visible = false;
-                //dgvListaArt.Columns["imagenUrl"].Visible = false;
+                dgvListaArt.DataSource = listaArticulos;                
+                ocultarColumnas();                
                 cargarImagen(listaArticulos[0].ImagenUrl);
 
             }
@@ -114,10 +115,13 @@ namespace Presentacion
         {
             List<Articulo> listaFiltro;
             string filtro = txtFiltroRapido.Text;
+                        
 
             if(filtro.Length >= 3)
             {
-                listaFiltro = listaArticulos.FindAll(x => x.Nombre.ToUpper().Contains(txtFiltroRapido.Text.ToUpper()));
+                listaFiltro = listaArticulos.FindAll(x => x.Marca.Descripcion1.ToUpper().Contains(txtFiltroRapido.Text.ToUpper())
+                                                       || x.Categoria.Descripcion1.ToUpper().Contains(txtFiltroRapido.Text.ToUpper()));
+
             }
             else
             {
@@ -127,6 +131,47 @@ namespace Presentacion
             dgvListaArt.DataSource = null;
             dgvListaArt.DataSource = listaFiltro;
             ocultarColumnas();
+        }
+        
+
+        private void cmbCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string eleccion = cmbCampo.SelectedItem.ToString();
+
+            if (eleccion == "Precio")
+            {
+                cmbCriterio.Items.Clear();
+                cmbCriterio.Items.Add("Mayor a ");
+                cmbCriterio.Items.Add("Menor a ");
+                cmbCriterio.Items.Add("Igual a ");
+            }
+            else
+            {
+                cmbCriterio.Items.Clear();
+                cmbCriterio.Items.Add("Comienza con ");
+                cmbCriterio.Items.Add("Termina con ");
+                cmbCriterio.Items.Add("Contiene ");
+
+            }
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            NegocioArticulo negocio = new NegocioArticulo();
+
+            try
+            {
+                string campo = cmbCampo.SelectedItem.ToString();
+                string criterio = cmbCriterio.SelectedItem.ToString();
+                string filtroAv = txtFiltroAvanz.Text;
+
+                dgvListaArt.DataSource = negocio.filtrarLista(campo, criterio, filtroAv);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.ToString());
+            }
         }
     }
 }
