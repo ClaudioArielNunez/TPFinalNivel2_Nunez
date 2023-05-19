@@ -173,5 +173,14 @@ namespace Presentacion
                 MessageBox.Show("Error: " + ex.ToString());
             }
         }
+
+        private void btnAgMarca_Click(object sender, EventArgs e)
+        {
+            NuevaMarca nuevaMarca = new NuevaMarca();
+            nuevaMarca.ShowDialog();
+
+        }
+
+        
     }
 }

@@ -188,7 +188,7 @@ namespace Negocio
                             break;
                         case "Termina con ":
                             consulta += "A.Descripcion Like '%" + filtro + "'";
-                            break;
+                            break;                                             
                         default:
                             consulta += "A.Descripcion Like '%" + filtro + "%'";
                             break;

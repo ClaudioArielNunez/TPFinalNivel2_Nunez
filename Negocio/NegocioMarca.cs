@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using Datos;
+using System.Text.RegularExpressions;
 
 namespace Negocio
 {
@@ -39,7 +40,58 @@ namespace Negocio
             }
 
         }
+        public bool chequear(List<Marca> lista, string marca)
+        {
+            bool existe = false;
+            foreach (var Marca in lista)
+            {
+                if(Marca.Descripcion1.ToUpper() == marca.ToUpper())
+                {
+                    existe = true;
+                }
+            }
+            return existe;
+        }                  
+        public void agregarMarca(Marca marca)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            
+            
+                try
+                {
+                    datos.setearConsulta("insert into MARCAS(Descripcion) values('" + marca.Descripcion1 + "')");
+                    datos.ejecutarAccion();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    datos.cerrar();
+                }
+            
+            
+        }
+        public void eliminarMarca(Marca marca)
+        {
+            AccesoDatos datos = new AccesoDatos();
 
+            try
+            {
+                datos.setearConsulta("Delete from Marcas where Id = " + marca.Id1);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrar();
+            }
+        }
         
     }
+    
 }

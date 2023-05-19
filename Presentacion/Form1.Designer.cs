@@ -42,6 +42,8 @@
             this.cmbCriterio = new System.Windows.Forms.ComboBox();
             this.txtFiltroAvanz = new System.Windows.Forms.TextBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
+            this.btnAgMarca = new System.Windows.Forms.Button();
+            this.bnAgCat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +59,7 @@
             this.dgvListaArt.RowTemplate.Height = 28;
             this.dgvListaArt.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaArt.Size = new System.Drawing.Size(992, 273);
-            this.dgvListaArt.TabIndex = 0;
+            this.dgvListaArt.TabIndex = 0;            
             this.dgvListaArt.SelectionChanged += new System.EventHandler(this.dgvListaArt_SelectionChanged);
             // 
             // pbxArticulo
@@ -185,11 +187,32 @@
             this.btnFiltrar.UseVisualStyleBackColor = true;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
+            // btnAgMarca
+            // 
+            this.btnAgMarca.Location = new System.Drawing.Point(32, 516);
+            this.btnAgMarca.Name = "btnAgMarca";
+            this.btnAgMarca.Size = new System.Drawing.Size(143, 46);
+            this.btnAgMarca.TabIndex = 10;
+            this.btnAgMarca.Text = "Agregar Marca";
+            this.btnAgMarca.UseVisualStyleBackColor = true;
+            this.btnAgMarca.Click += new System.EventHandler(this.btnAgMarca_Click);
+            // 
+            // bnAgCat
+            // 
+            this.bnAgCat.Location = new System.Drawing.Point(230, 516);
+            this.bnAgCat.Name = "bnAgCat";
+            this.bnAgCat.Size = new System.Drawing.Size(143, 46);
+            this.bnAgCat.TabIndex = 10;
+            this.bnAgCat.Text = "Agregar Categ";
+            this.bnAgCat.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1355, 546);
+            this.ClientSize = new System.Drawing.Size(1355, 612);
+            this.Controls.Add(this.bnAgCat);
+            this.Controls.Add(this.btnAgMarca);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.txtFiltroAvanz);
             this.Controls.Add(this.cmbCriterio);
@@ -231,6 +254,8 @@
         private System.Windows.Forms.ComboBox cmbCriterio;
         private System.Windows.Forms.TextBox txtFiltroAvanz;
         private System.Windows.Forms.Button btnFiltrar;
+        private System.Windows.Forms.Button btnAgMarca;
+        private System.Windows.Forms.Button bnAgCat;
     }
 }
 
