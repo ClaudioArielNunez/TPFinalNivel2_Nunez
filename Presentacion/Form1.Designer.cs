@@ -43,7 +43,7 @@
             this.txtFiltroAvanz = new System.Windows.Forms.TextBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.btnAgMarca = new System.Windows.Forms.Button();
-            this.bnAgCat = new System.Windows.Forms.Button();
+            this.btnAgCat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +59,7 @@
             this.dgvListaArt.RowTemplate.Height = 28;
             this.dgvListaArt.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaArt.Size = new System.Drawing.Size(992, 273);
-            this.dgvListaArt.TabIndex = 0;            
+            this.dgvListaArt.TabIndex = 0;
             this.dgvListaArt.SelectionChanged += new System.EventHandler(this.dgvListaArt_SelectionChanged);
             // 
             // pbxArticulo
@@ -197,21 +197,22 @@
             this.btnAgMarca.UseVisualStyleBackColor = true;
             this.btnAgMarca.Click += new System.EventHandler(this.btnAgMarca_Click);
             // 
-            // bnAgCat
+            // btnAgCat
             // 
-            this.bnAgCat.Location = new System.Drawing.Point(230, 516);
-            this.bnAgCat.Name = "bnAgCat";
-            this.bnAgCat.Size = new System.Drawing.Size(143, 46);
-            this.bnAgCat.TabIndex = 10;
-            this.bnAgCat.Text = "Agregar Categ";
-            this.bnAgCat.UseVisualStyleBackColor = true;
+            this.btnAgCat.Location = new System.Drawing.Point(230, 516);
+            this.btnAgCat.Name = "btnAgCat";
+            this.btnAgCat.Size = new System.Drawing.Size(143, 46);
+            this.btnAgCat.TabIndex = 10;
+            this.btnAgCat.Text = "Agregar Categ";
+            this.btnAgCat.UseVisualStyleBackColor = true;
+            this.btnAgCat.Click += new System.EventHandler(this.btnAgCat_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1355, 612);
-            this.Controls.Add(this.bnAgCat);
+            this.Controls.Add(this.btnAgCat);
             this.Controls.Add(this.btnAgMarca);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.txtFiltroAvanz);
@@ -255,7 +256,7 @@
         private System.Windows.Forms.TextBox txtFiltroAvanz;
         private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.Button btnAgMarca;
-        private System.Windows.Forms.Button bnAgCat;
+        private System.Windows.Forms.Button btnAgCat;
     }
 }
 

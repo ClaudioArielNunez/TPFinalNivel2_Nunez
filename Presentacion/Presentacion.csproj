@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="NuevaCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevaCategoria.Designer.cs">
+      <DependentUpon>NuevaCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="NuevaMarca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevaCategoria.resx">
+      <DependentUpon>NuevaCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NuevaMarca.resx">
       <DependentUpon>NuevaMarca.cs</DependentUpon>

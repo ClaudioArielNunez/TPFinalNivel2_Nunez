@@ -50,7 +50,7 @@
             this.dgvMarcas.RowHeadersWidth = 62;
             this.dgvMarcas.RowTemplate.Height = 28;
             this.dgvMarcas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMarcas.Size = new System.Drawing.Size(328, 351);
+            this.dgvMarcas.Size = new System.Drawing.Size(374, 317);
             this.dgvMarcas.TabIndex = 0;
             // 
             // lbl1

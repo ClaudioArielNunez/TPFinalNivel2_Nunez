@@ -181,6 +181,10 @@ namespace Presentacion
 
         }
 
-        
+        private void btnAgCat_Click(object sender, EventArgs e)
+        {
+            NuevaCategoria nuevaCategoria = new NuevaCategoria();
+            nuevaCategoria.ShowDialog();
+        }
     }
 }
