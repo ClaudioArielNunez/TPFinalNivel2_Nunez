@@ -126,9 +126,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(28, 455);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 22);
+            this.label1.Size = new System.Drawing.Size(72, 22);
             this.label1.TabIndex = 5;
-            this.label1.Text = "label1";
+            this.label1.Text = "Campo:";
             // 
             // label2
             // 
@@ -136,19 +136,19 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(295, 455);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 22);
+            this.label2.Size = new System.Drawing.Size(73, 22);
             this.label2.TabIndex = 5;
-            this.label2.Text = "label1";
+            this.label2.Text = "Criterio:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(588, 455);
+            this.label3.Location = new System.Drawing.Point(597, 455);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 22);
+            this.label3.Size = new System.Drawing.Size(55, 22);
             this.label3.TabIndex = 5;
-            this.label3.Text = "label1";
+            this.label3.Text = "Filtro:";
             // 
             // cmbCampo
             // 
@@ -172,7 +172,7 @@
             // txtFiltroAvanz
             // 
             this.txtFiltroAvanz.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFiltroAvanz.Location = new System.Drawing.Point(672, 449);
+            this.txtFiltroAvanz.Location = new System.Drawing.Point(666, 449);
             this.txtFiltroAvanz.Name = "txtFiltroAvanz";
             this.txtFiltroAvanz.Size = new System.Drawing.Size(184, 28);
             this.txtFiltroAvanz.TabIndex = 8;
@@ -211,7 +211,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1355, 612);
+            this.ClientSize = new System.Drawing.Size(1403, 612);
             this.Controls.Add(this.btnAgCat);
             this.Controls.Add(this.btnAgMarca);
             this.Controls.Add(this.btnFiltrar);

@@ -39,5 +39,53 @@ namespace Presentacion
                 MessageBox.Show("Error: " + ex.ToString());
             }
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Categoria categoria = new Categoria();
+            NegocioCategoria negocio = new NegocioCategoria();
+
+            try
+            {
+                categoria.Descripcion1 = txtCateg.Text;
+                bool existe = negocio.chequear(listaCategorias, categoria.Descripcion1);
+                if (!existe)
+                {
+                    negocio.agregarCat(categoria);
+                    MessageBox.Show("Categoría agregada con exito");
+                    cargarCategorias();
+                }
+                else
+                {
+                    MessageBox.Show("La categoría ya existe"); ;
+                }
+                txtCateg.Text = "";
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            NegocioCategoria negocio = new NegocioCategoria();
+            Categoria categPorBorrar;
+            try
+            {
+                DialogResult consulta = MessageBox.Show("Eliminas esta categoría?","Eliminando",MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if(consulta == DialogResult.OK)
+                {
+                    categPorBorrar = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
+                    negocio.eliminarCat(categPorBorrar);
+                    cargarCategorias();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

@@ -113,6 +113,7 @@
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.dgvMarcas);
             this.Name = "NuevaMarca";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NuevaMarca";
             this.Load += new System.EventHandler(this.NuevaMarca_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).EndInit();

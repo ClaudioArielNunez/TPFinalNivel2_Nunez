@@ -41,5 +41,54 @@ namespace Negocio
                 datos.cerrar();
             }
         }
+        public bool chequear(List<Categoria> lista, string categoria)
+        {
+            bool existe = false;
+
+            foreach (var Categoria in lista)
+            {
+                if (Categoria.Descripcion1.ToUpper() == categoria.ToUpper())
+                {
+                    existe = true;
+                }                
+            }
+            return existe;
+        }
+        public void agregarCat(Categoria categ)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("Insert into CATEGORIAS(Descripcion) VALUES('"+ categ.Descripcion1 +"')");
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrar();
+            }
+        }
+        public void eliminarCat(Categoria cat)
+        {
+            AccesoDatos datos = new AccesoDatos();            
+
+            try
+            {
+                datos.setearConsulta("Delete from CATEGORIAS where Id = " + cat.Id1 );
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrar();
+            }
+        }
     }
 }
