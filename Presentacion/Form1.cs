@@ -23,11 +23,16 @@ namespace Presentacion
         private void Form1_Load(object sender, EventArgs e)
         {
             cargar();
-            cmbCampo.Items.Add("Precio");
+            columnaDecimales();
             cmbCampo.Items.Add("Codigo");
             cmbCampo.Items.Add("Nombre");
             cmbCampo.Items.Add("Descripcion");// chequear acentuacion
+            cmbCampo.Items.Add("Precio");
                      
+        }
+        private void columnaDecimales()
+        {
+            dgvListaArt.Columns["Precio"].DefaultCellStyle.Format = "0.00";
         }
         private void ocultarColumnas()
         {
@@ -44,7 +49,8 @@ namespace Presentacion
                 dgvListaArt.DataSource = listaArticulos;                
                 ocultarColumnas();                
                 cargarImagen(listaArticulos[0].ImagenUrl);
-
+                //lblNombreSelec.Text = listaArticulos[0].Nombre.ToString();//
+               
             }
             catch (Exception ex)
             {
@@ -57,9 +63,20 @@ namespace Presentacion
             if (dgvListaArt.CurrentRow != null)
             {
                 Articulo select = (Articulo)dgvListaArt.CurrentRow.DataBoundItem;                
-                cargarImagen(select.ImagenUrl);
+                cargarImagen(select.ImagenUrl);                
+                cargarDatos(select);
             }
         }
+        //--------------------CARGAR LABELS
+        private void cargarDatos(Articulo art)
+        {
+            lblNombreSelec.Text = "Nombre: "+art.Nombre.ToString();
+            lblDescSelec.Text = "Descripción: "+art.Descripcion.ToString();
+            lblMarcaSelec.Text = "Marca: "+art.Marca.ToString();
+            lblPrecioSelec.Text = "Precio: "+art.Precio.ToString("0.00");
+        }
+
+        //--------------------
 
         private void cargarImagen(string img)
         {
@@ -158,9 +175,14 @@ namespace Presentacion
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
             NegocioArticulo negocio = new NegocioArticulo();
-
+            
             try
             {
+                if (validarFiltro())
+                {
+                    return;
+                }
+
                 string campo = cmbCampo.SelectedItem.ToString();
                 string criterio = cmbCriterio.SelectedItem.ToString();
                 string filtroAv = txtFiltroAvanz.Text;
@@ -169,7 +191,6 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Error: " + ex.ToString());
             }
         }
@@ -186,5 +207,48 @@ namespace Presentacion
             NuevaCategoria nuevaCategoria = new NuevaCategoria();
             nuevaCategoria.ShowDialog();
         }
+
+        
+        //Validaciones
+        private bool validarFiltro()
+        {
+            if(cmbCampo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Debe ingresar un campo");
+                return true;
+            }
+            if (cmbCriterio.SelectedIndex < 0)
+            {
+                MessageBox.Show("Debe ingresar un criterio");
+                return true;
+            }
+            if (cmbCampo.SelectedItem.ToString() == "Precio")
+            {
+                if (string.IsNullOrEmpty(txtFiltroAvanz.Text))
+                {
+                    MessageBox.Show("Debe ingresar un precio");
+                    return true;
+                }
+                if (validarNumeros(txtFiltroAvanz.Text))
+                {
+                    MessageBox.Show("Sólo puedes ingresar números");
+                    return true;
+                }
+            }
+            return false;
+        }
+        private bool validarNumeros(string cadenaNum)
+        {
+            foreach (char num in cadenaNum)
+            {
+                if (char.IsLetter(num))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        
     }
 }

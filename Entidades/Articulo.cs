@@ -17,7 +17,7 @@ namespace Entidades
         private string nombre;
         private string descripcion;
         private string imagenUrl;
-        private decimal precio;
+        private decimal precio;//
         private Marca marca;
         private Categoria categoria;
 

@@ -57,7 +57,7 @@ namespace Presentacion
                     MessageBox.Show("Modificado con exito!");
                 }
                 else
-                {
+                {//si el producto no existe => Agregar //probar if(articulo.Id == 0 && existe)
                     negocio.agregar(articulo);
                     MessageBox.Show("Agregado con exito");
                 }

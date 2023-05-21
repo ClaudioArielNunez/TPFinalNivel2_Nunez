@@ -44,6 +44,11 @@
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.btnAgMarca = new System.Windows.Forms.Button();
             this.btnAgCat = new System.Windows.Forms.Button();
+            this.lblNombreSelec = new System.Windows.Forms.Label();
+            this.lblDescSelec = new System.Windows.Forms.Label();
+            this.lblMarcaSelec = new System.Windows.Forms.Label();
+            this.lblPrecioSelec = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
@@ -105,18 +110,18 @@
             // 
             this.lblFiltro.AutoSize = true;
             this.lblFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFiltro.Location = new System.Drawing.Point(28, 23);
+            this.lblFiltro.Location = new System.Drawing.Point(28, 14);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(55, 22);
+            this.lblFiltro.Size = new System.Drawing.Size(275, 22);
             this.lblFiltro.TabIndex = 3;
-            this.lblFiltro.Text = "Filtro:";
+            this.lblFiltro.Text = "Búsqueda por marca o categoría:";
             // 
             // txtFiltroRapido
             // 
             this.txtFiltroRapido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFiltroRapido.Location = new System.Drawing.Point(84, 23);
+            this.txtFiltroRapido.Location = new System.Drawing.Point(32, 40);
             this.txtFiltroRapido.Name = "txtFiltroRapido";
-            this.txtFiltroRapido.Size = new System.Drawing.Size(169, 28);
+            this.txtFiltroRapido.Size = new System.Drawing.Size(218, 28);
             this.txtFiltroRapido.TabIndex = 4;
             this.txtFiltroRapido.TextChanged += new System.EventHandler(this.txtFiltroRapido_TextChanged);
             // 
@@ -207,11 +212,66 @@
             this.btnAgCat.UseVisualStyleBackColor = true;
             this.btnAgCat.Click += new System.EventHandler(this.btnAgCat_Click);
             // 
+            // lblNombreSelec
+            // 
+            this.lblNombreSelec.AutoSize = true;
+            this.lblNombreSelec.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreSelec.Location = new System.Drawing.Point(1050, 468);
+            this.lblNombreSelec.Name = "lblNombreSelec";
+            this.lblNombreSelec.Size = new System.Drawing.Size(87, 25);
+            this.lblNombreSelec.TabIndex = 11;
+            this.lblNombreSelec.Text = "Nombre:";
+            // 
+            // lblDescSelec
+            // 
+            this.lblDescSelec.AutoSize = true;
+            this.lblDescSelec.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescSelec.Location = new System.Drawing.Point(1050, 506);
+            this.lblDescSelec.Name = "lblDescSelec";
+            this.lblDescSelec.Size = new System.Drawing.Size(120, 25);
+            this.lblDescSelec.TabIndex = 11;
+            this.lblDescSelec.Text = "Descripción:";
+            // 
+            // lblMarcaSelec
+            // 
+            this.lblMarcaSelec.AutoSize = true;
+            this.lblMarcaSelec.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarcaSelec.Location = new System.Drawing.Point(1050, 544);
+            this.lblMarcaSelec.Name = "lblMarcaSelec";
+            this.lblMarcaSelec.Size = new System.Drawing.Size(73, 25);
+            this.lblMarcaSelec.TabIndex = 11;
+            this.lblMarcaSelec.Text = "Marca:";
+            // 
+            // lblPrecioSelec
+            // 
+            this.lblPrecioSelec.AutoSize = true;
+            this.lblPrecioSelec.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecioSelec.Location = new System.Drawing.Point(1050, 581);
+            this.lblPrecioSelec.Name = "lblPrecioSelec";
+            this.lblPrecioSelec.Size = new System.Drawing.Size(73, 25);
+            this.lblPrecioSelec.TabIndex = 11;
+            this.lblPrecioSelec.Text = "Precio:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(1050, 430);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(163, 25);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Características:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1403, 612);
+            this.ClientSize = new System.Drawing.Size(1403, 648);
+            this.Controls.Add(this.lblPrecioSelec);
+            this.Controls.Add(this.lblMarcaSelec);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblDescSelec);
+            this.Controls.Add(this.lblNombreSelec);
             this.Controls.Add(this.btnAgCat);
             this.Controls.Add(this.btnAgMarca);
             this.Controls.Add(this.btnFiltrar);
@@ -257,6 +317,11 @@
         private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.Button btnAgMarca;
         private System.Windows.Forms.Button btnAgCat;
+        private System.Windows.Forms.Label lblNombreSelec;
+        private System.Windows.Forms.Label lblDescSelec;
+        private System.Windows.Forms.Label lblMarcaSelec;
+        private System.Windows.Forms.Label lblPrecioSelec;
+        private System.Windows.Forms.Label label4;
     }
 }
 

@@ -41,7 +41,8 @@ namespace Negocio
                     aux.Marca.Descripcion1 = (string)datos.Lector["marca"];
                     aux.Categoria.Id1 = (int)datos.Lector["IdCategoria"];//IdCategoria tabla Articulos
                     aux.Categoria.Descripcion1 = (string)datos.Lector["categoria"];
-                    aux.Precio = (decimal)datos.Lector["Precio"];
+                    aux.Precio = Math.Truncate((decimal)datos.Lector["Precio"]*100)/100;//faltan los decimales
+                    //aux.Precio = (decimal)datos.Lector["Precio"];
 
                     listaArticulos.Add(aux);
                 }
