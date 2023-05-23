@@ -187,7 +187,7 @@
             this.txtUrlimg.Location = new System.Drawing.Point(267, 242);
             this.txtUrlimg.Name = "txtUrlimg";
             this.txtUrlimg.Size = new System.Drawing.Size(222, 30);
-            this.txtUrlimg.TabIndex = 6;
+            this.txtUrlimg.TabIndex = 4;
             this.txtUrlimg.Leave += new System.EventHandler(this.txtUrlimg_Leave);
             // 
             // pbxArticulo
@@ -206,7 +206,7 @@
             this.cmbMarca.Location = new System.Drawing.Point(267, 290);
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(222, 28);
-            this.cmbMarca.TabIndex = 10;
+            this.cmbMarca.TabIndex = 5;
             // 
             // cmbCateg
             // 
@@ -215,12 +215,13 @@
             this.cmbCateg.Location = new System.Drawing.Point(267, 336);
             this.cmbCateg.Name = "cmbCateg";
             this.cmbCateg.Size = new System.Drawing.Size(222, 28);
-            this.cmbCateg.TabIndex = 10;
+            this.cmbCateg.TabIndex = 6;
             // 
             // NuevoArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(892, 562);
             this.Controls.Add(this.cmbCateg);
             this.Controls.Add(this.cmbMarca);
@@ -240,6 +241,8 @@
             this.Controls.Add(this.lblDesc);
             this.Controls.Add(this.lblMod);
             this.Controls.Add(this.lblCod);
+            this.MaximumSize = new System.Drawing.Size(914, 618);
+            this.MinimumSize = new System.Drawing.Size(914, 618);
             this.Name = "NuevoArticulo";
             this.Text = "NuevoArticulo";
             this.Load += new System.EventHandler(this.NuevoArticulo_Load);

@@ -14,6 +14,7 @@ namespace Presentacion
 {
     public partial class NuevoArticulo : Form
     {
+        private List<Articulo> listaArticulos;//------
         private Articulo articulo = null;
         public NuevoArticulo()
         {
@@ -34,10 +35,12 @@ namespace Presentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            NegocioArticulo nuevaLista = new NegocioArticulo();
             
             NegocioArticulo negocio = new NegocioArticulo();
             try
             {
+                listaArticulos = nuevaLista.listar();
                 if(articulo == null)
                 {
                     articulo = new Articulo();
@@ -46,7 +49,7 @@ namespace Presentacion
                 articulo.Codigo = txtCodigo.Text;
                 articulo.Nombre = txtNombre.Text;
                 articulo.Descripcion = txtDescr.Text;
-                articulo.Precio = Convert.ToDecimal(txtPrecio.Text);//
+                articulo.Precio = Convert.ToDecimal(txtPrecio.Text);
                 articulo.Marca = (Marca)cmbMarca.SelectedItem;
                 articulo.Categoria = (Categoria)cmbCateg.SelectedItem;
                 articulo.ImagenUrl = txtUrlimg.Text;
@@ -57,9 +60,19 @@ namespace Presentacion
                     MessageBox.Show("Modificado con exito!");
                 }
                 else
-                {//si el producto no existe => Agregar //probar if(articulo.Id == 0 && existe)
-                    negocio.agregar(articulo);
-                    MessageBox.Show("Agregado con exito");
+                {
+                    bool existe = negocio.chequearSiExiste(listaArticulos, articulo);
+                    if (!existe)
+                    {
+                        negocio.agregar(articulo);
+                        MessageBox.Show("Agregado con exito");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Este producto ya existe en la lista");
+                    }
+                    
+                    
                 }
                 Close();
                 

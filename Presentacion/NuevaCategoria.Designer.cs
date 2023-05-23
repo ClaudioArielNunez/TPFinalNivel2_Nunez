@@ -39,7 +39,7 @@
             // 
             // dgvCategorias
             // 
-            this.dgvCategorias.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvCategorias.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategorias.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvCategorias.Location = new System.Drawing.Point(38, 52);
@@ -103,6 +103,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(736, 450);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -110,6 +111,8 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtCateg);
             this.Controls.Add(this.dgvCategorias);
+            this.MaximumSize = new System.Drawing.Size(758, 506);
+            this.MinimumSize = new System.Drawing.Size(758, 506);
             this.Name = "NuevaCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NuevaCategoria";

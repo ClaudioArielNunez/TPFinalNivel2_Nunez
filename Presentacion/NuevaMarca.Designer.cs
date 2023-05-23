@@ -39,7 +39,7 @@
             // 
             // dgvMarcas
             // 
-            this.dgvMarcas.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvMarcas.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvMarcas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMarcas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -105,6 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(736, 450);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregarNew);
@@ -112,6 +113,8 @@
             this.Controls.Add(this.lbl2);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.dgvMarcas);
+            this.MaximumSize = new System.Drawing.Size(758, 506);
+            this.MinimumSize = new System.Drawing.Size(758, 506);
             this.Name = "NuevaMarca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NuevaMarca";

@@ -41,8 +41,8 @@ namespace Negocio
                     aux.Marca.Descripcion1 = (string)datos.Lector["marca"];
                     aux.Categoria.Id1 = (int)datos.Lector["IdCategoria"];//IdCategoria tabla Articulos
                     aux.Categoria.Descripcion1 = (string)datos.Lector["categoria"];
-                    aux.Precio = Math.Truncate((decimal)datos.Lector["Precio"]*100)/100;//faltan los decimales
-                    //aux.Precio = (decimal)datos.Lector["Precio"];
+                    aux.Precio = Math.Truncate((decimal)datos.Lector["Precio"]*100)/100;
+                    
 
                     listaArticulos.Add(aux);
                 }
@@ -228,6 +228,18 @@ namespace Negocio
 
         }
 
+        public bool chequearSiExiste(List<Articulo> listaArt, Articulo art)
+        {
+            bool existe = false;
+            foreach (var articulo in listaArt)
+            {
+                if(articulo.Nombre.ToUpper() == art.Nombre.ToUpper() || articulo.Descripcion.ToUpper() == art.Descripcion.ToUpper() || articulo.Codigo.ToUpper() == art.Codigo.ToUpper() || articulo.ImagenUrl == art.ImagenUrl && articulo.ImagenUrl != "")
+                {
+                    existe = true;
+                }
+            }
+            return existe;
+        }
 
         
 

@@ -24,9 +24,9 @@ namespace Presentacion
         {
             cargar();
             columnaDecimales();
-            cmbCampo.Items.Add("Codigo");
+            cmbCampo.Items.Add("Código");
             cmbCampo.Items.Add("Nombre");
-            cmbCampo.Items.Add("Descripcion");// chequear acentuacion
+            cmbCampo.Items.Add("Descripción");
             cmbCampo.Items.Add("Precio");
                      
         }

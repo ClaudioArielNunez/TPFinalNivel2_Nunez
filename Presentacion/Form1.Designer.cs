@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvListaArt = new System.Windows.Forms.DataGridView();
             this.pbxArticulo = new System.Windows.Forms.PictureBox();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -49,12 +50,16 @@
             this.lblMarcaSelec = new System.Windows.Forms.Label();
             this.lblPrecioSelec = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvListaArt
             // 
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            this.dgvListaArt.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvListaArt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaArt.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvListaArt.Location = new System.Drawing.Point(28, 81);
@@ -69,7 +74,7 @@
             // 
             // pbxArticulo
             // 
-            this.pbxArticulo.Location = new System.Drawing.Point(1034, 12);
+            this.pbxArticulo.Location = new System.Drawing.Point(1060, 13);
             this.pbxArticulo.Name = "pbxArticulo";
             this.pbxArticulo.Size = new System.Drawing.Size(298, 404);
             this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -78,32 +83,41 @@
             // 
             // btnAgregar
             // 
+            this.btnAgregar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Location = new System.Drawing.Point(28, 370);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(143, 46);
             this.btnAgregar.TabIndex = 2;
             this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnModificar
             // 
+            this.btnModificar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Location = new System.Drawing.Point(230, 370);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(143, 46);
             this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
+            this.btnEliminar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Location = new System.Drawing.Point(440, 370);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(143, 46);
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // lblFiltro
@@ -129,7 +143,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(28, 455);
+            this.label1.Location = new System.Drawing.Point(5, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 22);
             this.label1.TabIndex = 5;
@@ -139,7 +153,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(295, 455);
+            this.label2.Location = new System.Drawing.Point(278, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 22);
             this.label2.TabIndex = 5;
@@ -149,7 +163,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(597, 455);
+            this.label3.Location = new System.Drawing.Point(578, 44);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 22);
             this.label3.TabIndex = 5;
@@ -159,7 +173,7 @@
             // 
             this.cmbCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCampo.FormattingEnabled = true;
-            this.cmbCampo.Location = new System.Drawing.Point(112, 449);
+            this.cmbCampo.Location = new System.Drawing.Point(87, 40);
             this.cmbCampo.Name = "cmbCampo";
             this.cmbCampo.Size = new System.Drawing.Size(157, 28);
             this.cmbCampo.TabIndex = 6;
@@ -169,7 +183,7 @@
             // 
             this.cmbCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCriterio.FormattingEnabled = true;
-            this.cmbCriterio.Location = new System.Drawing.Point(379, 449);
+            this.cmbCriterio.Location = new System.Drawing.Point(361, 40);
             this.cmbCriterio.Name = "cmbCriterio";
             this.cmbCriterio.Size = new System.Drawing.Size(183, 28);
             this.cmbCriterio.TabIndex = 7;
@@ -177,14 +191,14 @@
             // txtFiltroAvanz
             // 
             this.txtFiltroAvanz.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFiltroAvanz.Location = new System.Drawing.Point(666, 449);
+            this.txtFiltroAvanz.Location = new System.Drawing.Point(643, 38);
             this.txtFiltroAvanz.Name = "txtFiltroAvanz";
             this.txtFiltroAvanz.Size = new System.Drawing.Size(184, 28);
             this.txtFiltroAvanz.TabIndex = 8;
             // 
             // btnFiltrar
             // 
-            this.btnFiltrar.Location = new System.Drawing.Point(898, 446);
+            this.btnFiltrar.Location = new System.Drawing.Point(861, 35);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(97, 36);
             this.btnFiltrar.TabIndex = 9;
@@ -194,7 +208,7 @@
             // 
             // btnAgMarca
             // 
-            this.btnAgMarca.Location = new System.Drawing.Point(32, 516);
+            this.btnAgMarca.Location = new System.Drawing.Point(32, 562);
             this.btnAgMarca.Name = "btnAgMarca";
             this.btnAgMarca.Size = new System.Drawing.Size(143, 46);
             this.btnAgMarca.TabIndex = 10;
@@ -204,7 +218,7 @@
             // 
             // btnAgCat
             // 
-            this.btnAgCat.Location = new System.Drawing.Point(230, 516);
+            this.btnAgCat.Location = new System.Drawing.Point(230, 562);
             this.btnAgCat.Name = "btnAgCat";
             this.btnAgCat.Size = new System.Drawing.Size(143, 46);
             this.btnAgCat.TabIndex = 10;
@@ -216,7 +230,7 @@
             // 
             this.lblNombreSelec.AutoSize = true;
             this.lblNombreSelec.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreSelec.Location = new System.Drawing.Point(1050, 468);
+            this.lblNombreSelec.Location = new System.Drawing.Point(1091, 468);
             this.lblNombreSelec.Name = "lblNombreSelec";
             this.lblNombreSelec.Size = new System.Drawing.Size(87, 25);
             this.lblNombreSelec.TabIndex = 11;
@@ -226,7 +240,7 @@
             // 
             this.lblDescSelec.AutoSize = true;
             this.lblDescSelec.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescSelec.Location = new System.Drawing.Point(1050, 506);
+            this.lblDescSelec.Location = new System.Drawing.Point(1091, 506);
             this.lblDescSelec.Name = "lblDescSelec";
             this.lblDescSelec.Size = new System.Drawing.Size(120, 25);
             this.lblDescSelec.TabIndex = 11;
@@ -236,7 +250,7 @@
             // 
             this.lblMarcaSelec.AutoSize = true;
             this.lblMarcaSelec.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarcaSelec.Location = new System.Drawing.Point(1050, 544);
+            this.lblMarcaSelec.Location = new System.Drawing.Point(1091, 544);
             this.lblMarcaSelec.Name = "lblMarcaSelec";
             this.lblMarcaSelec.Size = new System.Drawing.Size(73, 25);
             this.lblMarcaSelec.TabIndex = 11;
@@ -246,7 +260,7 @@
             // 
             this.lblPrecioSelec.AutoSize = true;
             this.lblPrecioSelec.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecioSelec.Location = new System.Drawing.Point(1050, 581);
+            this.lblPrecioSelec.Location = new System.Drawing.Point(1091, 581);
             this.lblPrecioSelec.Name = "lblPrecioSelec";
             this.lblPrecioSelec.Size = new System.Drawing.Size(73, 25);
             this.lblPrecioSelec.TabIndex = 11;
@@ -256,17 +270,36 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1050, 430);
+            this.label4.Location = new System.Drawing.Point(1091, 430);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(163, 25);
             this.label4.TabIndex = 11;
             this.label4.Text = "Características:";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cmbCampo);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.cmbCriterio);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtFiltroAvanz);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.btnFiltrar);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(28, 442);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(992, 100);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filtro Avanzado";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1403, 648);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1473, 648);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblPrecioSelec);
             this.Controls.Add(this.lblMarcaSelec);
             this.Controls.Add(this.label4);
@@ -274,13 +307,6 @@
             this.Controls.Add(this.lblNombreSelec);
             this.Controls.Add(this.btnAgCat);
             this.Controls.Add(this.btnAgMarca);
-            this.Controls.Add(this.btnFiltrar);
-            this.Controls.Add(this.txtFiltroAvanz);
-            this.Controls.Add(this.cmbCriterio);
-            this.Controls.Add(this.cmbCampo);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtFiltroRapido);
             this.Controls.Add(this.lblFiltro);
             this.Controls.Add(this.btnEliminar);
@@ -288,12 +314,16 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.dgvListaArt);
+            this.MaximumSize = new System.Drawing.Size(1495, 704);
+            this.MinimumSize = new System.Drawing.Size(1495, 704);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "ListadoProductos";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,6 +352,7 @@
         private System.Windows.Forms.Label lblMarcaSelec;
         private System.Windows.Forms.Label lblPrecioSelec;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
