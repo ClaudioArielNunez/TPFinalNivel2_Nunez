@@ -49,6 +49,7 @@ namespace Presentacion
                 dgvListaArt.DataSource = listaArticulos;                
                 ocultarColumnas();                
                 cargarImagen(listaArticulos[0].ImagenUrl);
+                columnaDecimales();
                 //lblNombreSelec.Text = listaArticulos[0].Nombre.ToString();//
                
             }
@@ -188,6 +189,7 @@ namespace Presentacion
                 string filtroAv = txtFiltroAvanz.Text;
 
                 dgvListaArt.DataSource = negocio.filtrarLista(campo, criterio, filtroAv);
+                columnaDecimales();
             }
             catch (Exception ex)
             {
@@ -231,7 +233,7 @@ namespace Presentacion
                 }
                 if (validarNumeros(txtFiltroAvanz.Text))
                 {
-                    MessageBox.Show("Sólo puedes ingresar números");
+                    MessageBox.Show("Sólo puedes ingresar números y el caracter usado para decimales es '.'");
                     return true;
                 }
             }
@@ -241,7 +243,7 @@ namespace Presentacion
         {
             foreach (char num in cadenaNum)
             {
-                if (char.IsLetter(num))
+                if (char.IsLetter(num) || (num == ','))
                 {
                     return true;
                 }

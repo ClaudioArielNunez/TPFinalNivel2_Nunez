@@ -9,13 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
 using Entidades;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Presentacion
 {
     public partial class NuevoArticulo : Form
     {
         private List<Articulo> listaArticulos;//------
+
         private Articulo articulo = null;
+
+        
         public NuevoArticulo()
         {
             InitializeComponent();
@@ -41,18 +45,25 @@ namespace Presentacion
             try
             {
                 listaArticulos = nuevaLista.listar();
+
                 if(articulo == null)
                 {
                     articulo = new Articulo();
                 }
 
+                if (validarCamposObligatorios())
+                {
+                    return;
+                }
                 articulo.Codigo = txtCodigo.Text;
                 articulo.Nombre = txtNombre.Text;
-                articulo.Descripcion = txtDescr.Text;
-                articulo.Precio = Convert.ToDecimal(txtPrecio.Text);
+                articulo.Descripcion = txtDescr.Text;             
+                
+                articulo.Precio = Convert.ToDecimal(txtPrecio.Text);                
                 articulo.Marca = (Marca)cmbMarca.SelectedItem;
                 articulo.Categoria = (Categoria)cmbCateg.SelectedItem;
                 articulo.ImagenUrl = txtUrlimg.Text;
+                
 
                 if(articulo.Id != 0)
                 {
@@ -146,5 +157,57 @@ namespace Presentacion
                 cargarImagen(txtUrlimg.Text);
             }
         }
+
+        //-------------------------
+        private bool validarNumeros(string cadenaNum)
+        {
+            foreach (char num in cadenaNum)
+            {
+                if (char.IsLetter(num) || num == ',')
+                {
+                    return true;
+                }
+            }
+            return false;
+
+        }
+        public bool validarCamposObligatorios()
+        {
+            if (string.IsNullOrEmpty(txtCodigo.Text))
+            {
+                MessageBox.Show("Digite el código");
+                return true;
+            }
+            if (string.IsNullOrEmpty(txtNombre.Text))
+            {
+                MessageBox.Show("Escriba el nombre del producto");
+                return true;
+            }
+            if (string.IsNullOrEmpty(txtPrecio.Text))
+            {
+                MessageBox.Show("Ingrese el precio del producto");
+                return true;
+            }
+            if (!(validacionPrecio(txtPrecio.Text)))
+            {
+                MessageBox.Show("Solo numeros, y punto por favor");
+                return true;
+            }
+
+            return false;
+        }
+        //---------------------------------
+        private bool validacionPrecio(string cadena)
+        {
+            foreach (char x in cadena)
+            {
+                if ((char.IsNumber(x) || x == ','))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
+
 }
