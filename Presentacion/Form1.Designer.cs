@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvListaArt = new System.Windows.Forms.DataGridView();
             this.pbxArticulo = new System.Windows.Forms.PictureBox();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -58,8 +58,8 @@
             // 
             // dgvListaArt
             // 
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            this.dgvListaArt.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            this.dgvListaArt.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvListaArt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaArt.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvListaArt.Location = new System.Drawing.Point(28, 81);
@@ -297,8 +297,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1473, 648);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(1478, 648);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblPrecioSelec);
             this.Controls.Add(this.lblMarcaSelec);
@@ -314,8 +316,9 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.dgvListaArt);
-            this.MaximumSize = new System.Drawing.Size(1495, 704);
-            this.MinimumSize = new System.Drawing.Size(1495, 704);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1500, 704);
+            this.MinimumSize = new System.Drawing.Size(1500, 704);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListadoProductos";

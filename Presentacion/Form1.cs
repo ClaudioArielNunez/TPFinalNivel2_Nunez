@@ -23,7 +23,7 @@ namespace Presentacion
         private void Form1_Load(object sender, EventArgs e)
         {
             cargar();
-            columnaDecimales();
+            //columnaDecimales();
             cmbCampo.Items.Add("Código");
             cmbCampo.Items.Add("Nombre");
             cmbCampo.Items.Add("Descripción");
@@ -49,7 +49,7 @@ namespace Presentacion
                 dgvListaArt.DataSource = listaArticulos;                
                 ocultarColumnas();                
                 cargarImagen(listaArticulos[0].ImagenUrl);
-                columnaDecimales();
+                columnaDecimales();   
                 //lblNombreSelec.Text = listaArticulos[0].Nombre.ToString();//
                
             }
@@ -71,9 +71,9 @@ namespace Presentacion
         //--------------------CARGAR LABELS
         private void cargarDatos(Articulo art)
         {
-            lblNombreSelec.Text = "Nombre: "+art.Nombre.ToString();
-            lblDescSelec.Text = "Descripción: "+art.Descripcion.ToString();
-            lblMarcaSelec.Text = "Marca: "+art.Marca.ToString();
+            lblNombreSelec.Text = "Nombre: "+art.Nombre;
+            lblDescSelec.Text = "Descripción: "+art.Descripcion;
+            lblMarcaSelec.Text = "Marca: "+art.Marca;
             lblPrecioSelec.Text = "Precio: "+art.Precio.ToString("0.00");
         }
 
@@ -106,6 +106,7 @@ namespace Presentacion
             NuevoArticulo modificar = new NuevoArticulo(select);
             modificar.ShowDialog();
             cargar();
+            
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -233,7 +234,7 @@ namespace Presentacion
                 }
                 if (validarNumeros(txtFiltroAvanz.Text))
                 {
-                    MessageBox.Show("Sólo puedes ingresar números y el caracter usado para decimales es '.'");
+                    MessageBox.Show("Sólo puedes ingresar números y el caracter usado para decimales es '.' (punto)");
                     return true;
                 }
             }

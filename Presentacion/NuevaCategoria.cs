@@ -47,6 +47,17 @@ namespace Presentacion
 
             try
             {
+                if(negocio.validarCampos(txtCateg.Text))
+                {
+                    MessageBox.Show("Debe ingresar una categoría");
+                    return;
+                }
+                if (negocio.validarLetras(txtCateg.Text))
+                {
+                    MessageBox.Show("Ingrese letras, por favor");
+                    txtCateg.Text = "";
+                    return;
+                }
                 categoria.Descripcion1 = txtCateg.Text;
                 bool existe = negocio.chequear(listaCategorias, categoria.Descripcion1);
                 if (!existe)

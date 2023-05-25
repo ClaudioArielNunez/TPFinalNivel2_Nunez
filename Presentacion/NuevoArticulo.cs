@@ -59,7 +59,7 @@ namespace Presentacion
                 articulo.Nombre = txtNombre.Text;
                 articulo.Descripcion = txtDescr.Text;             
                 
-                articulo.Precio = Convert.ToDecimal(txtPrecio.Text);                
+                articulo.Precio = Convert.ToDecimal(txtPrecio.Text);       //         
                 articulo.Marca = (Marca)cmbMarca.SelectedItem;
                 articulo.Categoria = (Categoria)cmbCateg.SelectedItem;
                 articulo.ImagenUrl = txtUrlimg.Text;
@@ -117,7 +117,7 @@ namespace Presentacion
                         txtCodigo.Text = articulo.Codigo;
                         txtNombre.Text = articulo.Nombre;
                         txtDescr.Text = articulo.Descripcion;
-                        txtPrecio.Text = articulo.Precio.ToString("0.00");
+                        txtPrecio.Text = Convert.ToString(articulo.Precio);//ToString("0.00")
                         cmbMarca.SelectedValue = articulo.Marca.Id1;
                         cmbCateg.SelectedValue = articulo.Categoria.Id1;
                         cargarImagen(articulo.ImagenUrl);
@@ -163,7 +163,7 @@ namespace Presentacion
         {
             foreach (char num in cadenaNum)
             {
-                if (char.IsLetter(num) || num == ',')
+                if (char.IsLetter(num) || num == '.') //Así me acepta los decimales con coma
                 {
                     return true;
                 }
@@ -188,26 +188,16 @@ namespace Presentacion
                 MessageBox.Show("Ingrese el precio del producto");
                 return true;
             }
-            if (!(validacionPrecio(txtPrecio.Text)))
+            if (validarNumeros(txtPrecio.Text))
             {
-                MessageBox.Show("Solo numeros, y punto por favor");
+                MessageBox.Show("Solo números y en caso de usar decimales,utilizar coma (,) por favor");
                 return true;
-            }
+            }            
 
             return false;
-        }
-        //---------------------------------
-        private bool validacionPrecio(string cadena)
-        {
-            foreach (char x in cadena)
-            {
-                if ((char.IsNumber(x) || x == ','))
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
+        }               
+               
+                                
     }
 
 }

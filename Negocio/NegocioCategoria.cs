@@ -90,5 +90,24 @@ namespace Negocio
                 datos.cerrar();
             }
         }
+        public bool validarCampos(string campo)
+        {
+           if( string.IsNullOrEmpty(campo))
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool validarLetras(string campo)
+        {
+            foreach (char letra in campo)
+            {
+                if (char.IsNumber(letra))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

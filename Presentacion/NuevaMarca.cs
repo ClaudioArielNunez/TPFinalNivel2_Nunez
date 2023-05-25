@@ -48,7 +48,18 @@ namespace Presentacion
             NegocioMarca negocio = new NegocioMarca();
                
             try
-            {          
+            {
+                if (negocio.validarCampos(txtMarcAgr.Text))
+                {                    
+                    MessageBox.Show("Debe ingresar una marca compuesta de letras");
+                    return;
+                }
+                if (negocio.validarLetras(txtMarcAgr.Text))
+                {
+                    MessageBox.Show("Ingrese letras, por favor");
+                    txtMarcAgr.Text = "";
+                    return;
+                }
                 marca.Descripcion1 = txtMarcAgr.Text;                            
                 
                 bool existe = negocio.chequear(listaMarcas,marca.Descripcion1);

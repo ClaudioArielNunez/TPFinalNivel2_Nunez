@@ -44,6 +44,7 @@ namespace Negocio
                     //aux.Precio = Math.Truncate((decimal)datos.Lector["Precio"]*100)/100;
                     aux.Precio = (decimal)datos.Lector["Precio"];
                     
+                    
 
                     listaArticulos.Add(aux);
                 }
@@ -66,7 +67,8 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, Precio, ImagenUrl, IdMarca, IdCategoria) values('"+ art.Codigo+"','"+art.Nombre+"','"+art.Descripcion+"',"+art.Precio+",@ImagenUrl, @IdMarca, @IdCategoria)");
+                datos.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, Precio, ImagenUrl, IdMarca, IdCategoria) values('"+ art.Codigo+"','"+art.Nombre+"','"+art.Descripcion+"', @Precio, @ImagenUrl, @IdMarca, @IdCategoria)");
+                datos.setearParametros("@Precio", art.Precio);
                 datos.setearParametros("@ImagenUrl", art.ImagenUrl);
                 datos.setearParametros("@IdMarca", art.Marca.Id1);
                 datos.setearParametros("@IdCategoria", art.Categoria.Id1);
@@ -216,7 +218,8 @@ namespace Negocio
                     aux.Marca.Descripcion1 = (string)datos.Lector["marca"];//
                     aux.Categoria.Id1 = (int)datos.Lector["IdCategoria"];
                     aux.Categoria.Descripcion1 = (string)datos.Lector["categoria"];//                                        
-                    aux.Precio = Math.Truncate((decimal)datos.Lector["Precio"] * 100) / 100;
+                    //aux.Precio = Math.Truncate((decimal)datos.Lector["Precio"] * 100) / 100;//
+                    aux.Precio = (decimal)datos.Lector["Precio"];
                         
                     
 
