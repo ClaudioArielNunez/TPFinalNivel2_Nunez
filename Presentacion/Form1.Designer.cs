@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvListaArt = new System.Windows.Forms.DataGridView();
             this.pbxArticulo = new System.Windows.Forms.PictureBox();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -58,8 +58,8 @@
             // 
             // dgvListaArt
             // 
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            this.dgvListaArt.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            this.dgvListaArt.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvListaArt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaArt.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvListaArt.Location = new System.Drawing.Point(28, 81);
@@ -74,9 +74,9 @@
             // 
             // pbxArticulo
             // 
-            this.pbxArticulo.Location = new System.Drawing.Point(1060, 13);
+            this.pbxArticulo.Location = new System.Drawing.Point(1100, 13);
             this.pbxArticulo.Name = "pbxArticulo";
-            this.pbxArticulo.Size = new System.Drawing.Size(298, 404);
+            this.pbxArticulo.Size = new System.Drawing.Size(356, 404);
             this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxArticulo.TabIndex = 1;
             this.pbxArticulo.TabStop = false;
@@ -240,7 +240,7 @@
             // 
             this.lblDescSelec.AutoSize = true;
             this.lblDescSelec.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescSelec.Location = new System.Drawing.Point(1091, 506);
+            this.lblDescSelec.Location = new System.Drawing.Point(1091, 567);
             this.lblDescSelec.Name = "lblDescSelec";
             this.lblDescSelec.Size = new System.Drawing.Size(120, 25);
             this.lblDescSelec.TabIndex = 11;
@@ -250,7 +250,7 @@
             // 
             this.lblMarcaSelec.AutoSize = true;
             this.lblMarcaSelec.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarcaSelec.Location = new System.Drawing.Point(1091, 544);
+            this.lblMarcaSelec.Location = new System.Drawing.Point(1091, 501);
             this.lblMarcaSelec.Name = "lblMarcaSelec";
             this.lblMarcaSelec.Size = new System.Drawing.Size(73, 25);
             this.lblMarcaSelec.TabIndex = 11;
@@ -260,7 +260,7 @@
             // 
             this.lblPrecioSelec.AutoSize = true;
             this.lblPrecioSelec.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecioSelec.Location = new System.Drawing.Point(1091, 581);
+            this.lblPrecioSelec.Location = new System.Drawing.Point(1091, 534);
             this.lblPrecioSelec.Name = "lblPrecioSelec";
             this.lblPrecioSelec.Size = new System.Drawing.Size(73, 25);
             this.lblPrecioSelec.TabIndex = 11;
@@ -300,7 +300,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1478, 648);
+            this.ClientSize = new System.Drawing.Size(1578, 738);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblPrecioSelec);
             this.Controls.Add(this.lblMarcaSelec);
@@ -317,8 +317,8 @@
             this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.dgvListaArt);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1500, 704);
-            this.MinimumSize = new System.Drawing.Size(1500, 704);
+            this.MaximumSize = new System.Drawing.Size(1600, 794);
+            this.MinimumSize = new System.Drawing.Size(1600, 794);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListadoProductos";

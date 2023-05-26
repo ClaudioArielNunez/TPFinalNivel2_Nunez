@@ -57,8 +57,8 @@ namespace Presentacion
                 }
                 articulo.Codigo = txtCodigo.Text;
                 articulo.Nombre = txtNombre.Text;
-                articulo.Descripcion = txtDescr.Text;             
-                
+                articulo.Descripcion = txtDescr.Text;               
+
                 articulo.Precio = Convert.ToDecimal(txtPrecio.Text);               
                 articulo.Marca = (Marca)cmbMarca.SelectedItem;
                 articulo.Categoria = (Categoria)cmbCateg.SelectedItem;
@@ -222,7 +222,8 @@ namespace Presentacion
 
             return false;
         }
-               
+
+        
     }
 
 }

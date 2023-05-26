@@ -77,6 +77,7 @@
             // 
             this.txtMarcAgr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMarcAgr.Location = new System.Drawing.Point(444, 96);
+            this.txtMarcAgr.MaxLength = 50;
             this.txtMarcAgr.Name = "txtMarcAgr";
             this.txtMarcAgr.Size = new System.Drawing.Size(237, 28);
             this.txtMarcAgr.TabIndex = 3;

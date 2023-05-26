@@ -70,10 +70,10 @@ namespace Presentacion
         //--------------------CARGAR LABELS
         private void cargarDatos(Articulo art)
         {
-            lblNombreSelec.Text = "Nombre: "+art.Nombre;
-            lblDescSelec.Text = "Descripción: "+art.Descripcion;
+            lblNombreSelec.Text = "Nombre: "+art.Nombre;            
+            lblDescSelec.Text = "Descripción: "+art.Descripcion;            
             lblMarcaSelec.Text = "Marca: "+art.Marca;
-            lblPrecioSelec.Text = "Precio: "+art.Precio.ToString("0.00");
+            lblPrecioSelec.Text = "Precio: "+art.Precio.ToString("0.00");            
         }
 
         //--------------------

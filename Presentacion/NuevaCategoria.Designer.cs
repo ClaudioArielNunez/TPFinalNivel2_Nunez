@@ -55,6 +55,7 @@
             // 
             this.txtCateg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCateg.Location = new System.Drawing.Point(444, 96);
+            this.txtCateg.MaxLength = 50;
             this.txtCateg.Name = "txtCateg";
             this.txtCateg.Size = new System.Drawing.Size(219, 28);
             this.txtCateg.TabIndex = 1;

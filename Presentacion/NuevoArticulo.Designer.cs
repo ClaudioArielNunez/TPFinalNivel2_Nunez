@@ -123,6 +123,7 @@
             // 
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.Location = new System.Drawing.Point(267, 50);
+            this.txtCodigo.MaxLength = 50;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(222, 30);
             this.txtCodigo.TabIndex = 0;
@@ -161,6 +162,7 @@
             // 
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(267, 98);
+            this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(222, 30);
             this.txtNombre.TabIndex = 1;
@@ -169,8 +171,10 @@
             // 
             this.txtDescr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescr.Location = new System.Drawing.Point(267, 146);
+            this.txtDescr.MaxLength = 150;
+            this.txtDescr.Multiline = true;
             this.txtDescr.Name = "txtDescr";
-            this.txtDescr.Size = new System.Drawing.Size(222, 30);
+            this.txtDescr.Size = new System.Drawing.Size(222, 26);
             this.txtDescr.TabIndex = 2;
             // 
             // txtPrecio
