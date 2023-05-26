@@ -15,7 +15,7 @@ namespace Presentacion
 {
     public partial class NuevoArticulo : Form
     {
-        private List<Articulo> listaArticulos;//------
+        private List<Articulo> listaArticulos;
 
         private Articulo articulo = null;
 
@@ -59,7 +59,7 @@ namespace Presentacion
                 articulo.Nombre = txtNombre.Text;
                 articulo.Descripcion = txtDescr.Text;             
                 
-                articulo.Precio = Convert.ToDecimal(txtPrecio.Text);       //         
+                articulo.Precio = Convert.ToDecimal(txtPrecio.Text);               
                 articulo.Marca = (Marca)cmbMarca.SelectedItem;
                 articulo.Categoria = (Categoria)cmbCateg.SelectedItem;
                 articulo.ImagenUrl = txtUrlimg.Text;
@@ -67,20 +67,46 @@ namespace Presentacion
 
                 if(articulo.Id != 0)
                 {
-                    negocio.modificar(articulo);
-                    MessageBox.Show("Modificado con exito!");
+                    
+                    DialogResult pregunta1 = MessageBox.Show("Has modificado el Código del producto?", "Modificando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (pregunta1 == DialogResult.Yes)
+                    {
+                        if(negocio.chequearSiExisteCod(listaArticulos, articulo.Codigo))
+                        {
+                            MessageBox.Show("Ya existe un producto con este mismo código: " + articulo.Codigo);
+                            return;
+                        }
+                    }
+                    
+                    DialogResult pregunta2 = MessageBox.Show("Has modificado el Nombre del producto?", "Modificando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (pregunta2 == DialogResult.Yes)
+                    {
+                        if (negocio.chequearsiExisteNombre(listaArticulos, articulo.Nombre))
+                        {
+                            MessageBox.Show("Ya existe un producto con el nombre: " + articulo.Nombre);
+                            return;
+                        }
+                    }                                      
+                                        
+                        negocio.modificar(articulo);
+                        MessageBox.Show("Modificado con exito!");                                       
+                    
                 }
                 else
-                {
-                    bool existe = negocio.chequearSiExiste(listaArticulos, articulo);
-                    if (!existe)
+                {                    
+                    if (negocio.chequearSiExisteCod(listaArticulos, articulo.Codigo))
+                    {                                                
+                        MessageBox.Show("Ya existe un producto con este mismo código: "+ articulo.Codigo);
+                        return;
+                    }else if (negocio.chequearsiExisteNombre(listaArticulos,articulo.Nombre))
+                    {
+                        MessageBox.Show("Ya existe un producto con el nombre: "+ articulo.Nombre);
+                        return;
+                    }                                    
+                    else
                     {
                         negocio.agregar(articulo);
                         MessageBox.Show("Agregado con exito");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Este producto ya existe en la lista");
                     }
                     
                     
@@ -158,7 +184,7 @@ namespace Presentacion
             }
         }
 
-        //-------------------------
+        
         private bool validarNumeros(string cadenaNum)
         {
             foreach (char num in cadenaNum)
@@ -195,9 +221,8 @@ namespace Presentacion
             }            
 
             return false;
-        }               
+        }
                
-                                
     }
 
 }

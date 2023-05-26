@@ -51,7 +51,7 @@ namespace Presentacion
             {
                 if (negocio.validarCampos(txtMarcAgr.Text))
                 {                    
-                    MessageBox.Show("Debe ingresar una marca compuesta de letras");
+                    MessageBox.Show("Debe ingresar una marca");
                     return;
                 }
                 if (negocio.validarLetras(txtMarcAgr.Text))

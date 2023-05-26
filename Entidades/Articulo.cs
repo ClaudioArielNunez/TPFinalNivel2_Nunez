@@ -8,11 +8,7 @@ using System.Threading.Tasks;
 namespace Entidades
 {
     public class Articulo
-    {
-        //Atributos
-        //public int Id { get; set; }
-        
-        //public int Id { get; set; }
+    {        
         private int id;        
         private string codigo;
         private string nombre;

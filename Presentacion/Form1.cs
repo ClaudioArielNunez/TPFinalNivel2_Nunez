@@ -22,8 +22,7 @@ namespace Presentacion
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            cargar();
-            //columnaDecimales();
+            cargar();            
             cmbCampo.Items.Add("Código");
             cmbCampo.Items.Add("Nombre");
             cmbCampo.Items.Add("Descripción");
@@ -50,7 +49,7 @@ namespace Presentacion
                 ocultarColumnas();                
                 cargarImagen(listaArticulos[0].ImagenUrl);
                 columnaDecimales();   
-                //lblNombreSelec.Text = listaArticulos[0].Nombre.ToString();//
+                
                
             }
             catch (Exception ex)
@@ -160,17 +159,20 @@ namespace Presentacion
             if (eleccion == "Precio")
             {
                 cmbCriterio.Items.Clear();
+                txtFiltroAvanz.Text = "";
                 cmbCriterio.Items.Add("Mayor a ");
                 cmbCriterio.Items.Add("Menor a ");
                 cmbCriterio.Items.Add("Igual a ");
+                cargar();
             }
             else
             {
                 cmbCriterio.Items.Clear();
+                txtFiltroAvanz.Text = "";
                 cmbCriterio.Items.Add("Comienza con ");
                 cmbCriterio.Items.Add("Termina con ");
                 cmbCriterio.Items.Add("Contiene ");
-
+                cargar();
             }
         }
 
@@ -190,7 +192,7 @@ namespace Presentacion
                 string filtroAv = txtFiltroAvanz.Text;
 
                 dgvListaArt.DataSource = negocio.filtrarLista(campo, criterio, filtroAv);
-                columnaDecimales();
+                //columnaDecimales();
             }
             catch (Exception ex)
             {
