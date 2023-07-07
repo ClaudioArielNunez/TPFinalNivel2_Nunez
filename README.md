@@ -14,7 +14,7 @@ Arquitectura en capas.
 
 ### Tecnologías utilizadas:
 - C#
-- .NET Framework
+- .NET Framework 4.8
 - SQL Server
 - Windows Forms
 - ADO.NET
